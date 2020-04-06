@@ -1,0 +1,2 @@
+rootProject.name='Head 2 Head'
+include ':app'
