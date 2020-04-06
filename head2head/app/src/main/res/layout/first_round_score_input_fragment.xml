@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#504B4B"
+    android:outlineAmbientShadowColor="#00FFFFFF"
+    tools:context=".FirstRoundScoreInput">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:outlineAmbientShadowColor="#00FFFFFF"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:backgroundTintMode="add"
+            android:orientation="vertical"
+            android:outlineAmbientShadowColor="#00FFFFFF">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/p1end1Cont"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:outlineAmbientShadowColor="#00FFFFFF"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:outlineAmbientShadowColor="#00FFFFFF"
+                    android:padding="4dp">
+
+                    <Button
+                        android:id="@+id/p1end1score1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p1end1score2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p1end1score3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <TextView
+                        android:id="@+id/equals1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/eq"
+                        android:textColor="#FFEB3B"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/p1end1score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/p1end1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    app:cardBackgroundColor="#00FFFFFF" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/p1end2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:outlineAmbientShadowColor="#00FFFFFF"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:outlineAmbientShadowColor="#00FFFFFF"
+                    android:padding="4dp">
+
+                    <Button
+                        android:id="@+id/p1end2score1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p1end2score2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p1end2score3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <TextView
+                        android:id="@+id/equals2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/eq"
+                        android:textColor="#FFEB3B"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/p1end2score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/p1end3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:outlineAmbientShadowColor="#00FFFFFF"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:outlineAmbientShadowColor="#00FFFFFF"
+                    android:padding="4dp">
+
+                    <Button
+                        android:id="@+id/p1end3score1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p1end3score2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p1end3score3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <TextView
+                        android:id="@+id/equals3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/eq"
+                        android:textColor="#FFEB3B"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/p1end3score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#ED0000"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/divider"
+        android:outlineAmbientShadowColor="#00FFFFFF"
+        android:scaleType="fitXY"
+        android:src="@drawable/divider"
+        app:layout_constraintBottom_toTopOf="@+id/player2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player1" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:outlineAmbientShadowColor="#00FFFFFF"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:backgroundTintMode="add"
+            android:orientation="vertical"
+            android:outlineAmbientShadowColor="#00FFFFFF">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/p2end1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:outlineAmbientShadowColor="#00FFFFFF"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:outlineAmbientShadowColor="#00FFFFFF"
+                    android:padding="4dp">
+
+                    <Button
+                        android:id="@+id/p2end1score1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p2end1score2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p2end1score3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <TextView
+                        android:id="@+id/p2equals1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/eq"
+                        android:textColor="#FFEB3B"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/p2end1score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/p2end2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:outlineAmbientShadowColor="#00FFFFFF"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:outlineAmbientShadowColor="#00FFFFFF"
+                    android:padding="4dp">
+
+                    <Button
+                        android:id="@+id/p2end2score1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p2end2score2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p2end2score3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <TextView
+                        android:id="@+id/p2equals2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/eq"
+                        android:textColor="#FFEB3B"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/p2end2score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/p2end3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:outlineAmbientShadowColor="#00FFFFFF"
+                app:cardBackgroundColor="#00FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:outlineAmbientShadowColor="#00FFFFFF"
+                    android:padding="4dp">
+
+                    <Button
+                        android:id="@+id/p2end3score1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p2end3score2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <Button
+                        android:id="@+id/p2end3score3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+
+                    <TextView
+                        android:id="@+id/p2equals3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/eq"
+                        android:textColor="#FFEB3B"
+                        android:textSize="24sp" />
+
+                    <Button
+                        android:id="@+id/p2end3score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/scorebutton"
+                        android:backgroundTint="#0014ED"
+                        android:backgroundTintMode="multiply"
+                        android:maxWidth="45dp"
+                        android:minWidth="45dp"
+                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:text="@string/none" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/player1Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:outlineAmbientShadowColor="#00FFFFFF"
+        android:text="@string/player1"
+        android:textColor="#FFEB3B"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/player2Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:outlineAmbientShadowColor="#00FFFFFF"
+        android:text="@string/player2"
+        android:textColor="#FFEB3B"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:outlineAmbientShadowColor="#00FFFFFF"
+        android:visibility="invisible"
+        app:layout_constraintGuide_begin="205dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
