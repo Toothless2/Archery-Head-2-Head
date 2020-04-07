@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Head 2 Head</string>
 
+    <!-- Players -->
+    <string name="playerName1Hint">Player 1</string>
+    <string name="playerName2Hint">Player 2</string>
+
     <!-- scores -->
     <string name="miss">M</string>
     <string name="one">1</string>

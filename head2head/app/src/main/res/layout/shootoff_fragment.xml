@@ -157,7 +157,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/player1Name"
+        android:id="@+id/player2Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
