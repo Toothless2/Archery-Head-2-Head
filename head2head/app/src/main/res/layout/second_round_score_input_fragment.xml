@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/Background"
     android:outlineAmbientShadowColor="#00FFFFFF"
-    tools:context=".fragments.FirstRoundScoreInput">
+    tools:context=".fragments.SecondRoundScoreInput">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/player1"
@@ -234,107 +234,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/p1end3Cont"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:outlineProvider="none"
-                app:cardBackgroundColor="@color/Background">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clickable="false"
-                    android:orientation="horizontal"
-                    android:outlineAmbientShadowColor="#00FFFFFF"
-                    android:padding="4dp">
-
-                    <Button
-                        android:id="@+id/p1end3score1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Red"
-                        android:backgroundTintMode="multiply"
-                        android:clickable="false"
-                        android:maxWidth="45dp"
-                        android:minWidth="45dp"
-                        android:outlineProvider="none"
-                        android:text="@string/none"
-                        android:textColor="@color/Red" />
-
-                    <Button
-                        android:id="@+id/p1end3score2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Red"
-                        android:backgroundTintMode="multiply"
-                        android:clickable="false"
-                        android:maxWidth="45dp"
-                        android:minWidth="45dp"
-                        android:outlineProvider="none"
-                        android:text="@string/none"
-                        android:textColor="@color/Red" />
-
-                    <Button
-                        android:id="@+id/p1end3score3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Red"
-                        android:backgroundTintMode="multiply"
-                        android:clickable="false"
-                        android:maxWidth="45dp"
-                        android:minWidth="45dp"
-                        android:outlineProvider="none"
-                        android:text="@string/none"
-                        android:textColor="@color/Red" />
-
-                    <TextView
-                        android:id="@+id/equals3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_weight="1"
-                        android:clickable="false"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/eq"
-                        android:textColor="#FFEB3B"
-                        android:textSize="24sp" />
-
-                    <Button
-                        android:id="@+id/p1end3score"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Red"
-                        android:backgroundTintMode="multiply"
-                        android:clickable="false"
-                        android:maxWidth="45dp"
-                        android:minWidth="45dp"
-                        android:outlineProvider="none"
-                        android:text="@string/none"
-                        android:textColor="@color/Red" />
-                </LinearLayout>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/p1end3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:outlineProvider="none"
-                    app:cardBackgroundColor="@android:color/transparent" />
-
-            </androidx.cardview.widget.CardView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -579,108 +478,6 @@
 
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/p2end3Cont"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:outlineAmbientShadowColor="#00FFFFFF"
-                android:outlineProvider="none"
-                app:cardBackgroundColor="#00FFFFFF">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clickable="false"
-                    android:orientation="horizontal"
-                    android:outlineProvider="none"
-                    android:padding="4dp">
-
-                    <Button
-                        android:id="@+id/p2end3score1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Blue"
-                        android:backgroundTintMode="multiply"
-                        android:clickable="false"
-                        android:maxWidth="45dp"
-                        android:minWidth="45dp"
-                        android:outlineProvider="none"
-                        android:text="@string/none"
-                        android:textColor="@color/Blue" />
-
-                    <Button
-                        android:id="@+id/p2end3score2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Blue"
-                        android:backgroundTintMode="multiply"
-                        android:clickable="false"
-                        android:maxWidth="45dp"
-                        android:minWidth="45dp"
-                        android:outlineProvider="none"
-                        android:text="@string/none"
-                        android:textColor="@color/Blue" />
-
-                    <Button
-                        android:id="@+id/p2end3score3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Blue"
-                        android:backgroundTintMode="multiply"
-                        android:clickable="false"
-                        android:maxWidth="45dp"
-                        android:minWidth="45dp"
-                        android:outlineProvider="none"
-                        android:text="@string/none"
-                        android:textColor="@color/Blue" />
-
-                    <TextView
-                        android:id="@+id/p2equals3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_weight="1"
-                        android:clickable="false"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/eq"
-                        android:textColor="#FFEB3B"
-                        android:textSize="24sp" />
-
-                    <Button
-                        android:id="@+id/p2end3score"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Blue"
-                        android:backgroundTintMode="multiply"
-                        android:clickable="false"
-                        android:maxWidth="45dp"
-                        android:minWidth="45dp"
-                        android:outlineProvider="none"
-                        android:text="@string/none"
-                        android:textColor="@color/Blue" />
-                </LinearLayout>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/p2end3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:outlineProvider="none"
-                    app:cardBackgroundColor="@android:color/transparent" />
-
-            </androidx.cardview.widget.CardView>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -717,8 +514,6 @@
         android:orientation="vertical"
         android:outlineAmbientShadowColor="#00FFFFFF"
         android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintGuide_percent="0.50121653" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
