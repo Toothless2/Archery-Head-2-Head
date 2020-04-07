@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#504B4B"
+    android:background="@color/Background"
     android:outlineAmbientShadowColor="#00FFFFFF"
     tools:context=".FirstRoundScoreInput">
 
@@ -13,8 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:outlineAmbientShadowColor="#00FFFFFF"
-        app:cardBackgroundColor="#00FFFFFF"
+        android:outlineProvider="none"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/Background"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,6 +39,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/Background"
                     android:orientation="horizontal"
                     android:outlineAmbientShadowColor="#00FFFFFF"
                     android:padding="4dp">
@@ -46,42 +48,49 @@
                         android:id="@+id/p1end1score1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
-                        android:backgroundTintMode="multiply"
+                        android:backgroundTint="@color/Red"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
 
                     <Button
                         android:id="@+id/p1end1score2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
 
                     <Button
                         android:id="@+id/p1end1score3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
 
                     <TextView
                         android:id="@+id/equals1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:layout_weight="1"
                         android:outlineAmbientShadowColor="#00FFFFFF"
                         android:text="@string/eq"
@@ -92,12 +101,14 @@
                         android:id="@+id/p1end1score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
                 </LinearLayout>
 
@@ -105,6 +116,7 @@
                     android:id="@+id/p1end1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:outlineProvider="none"
                     android:visibility="visible"
                     app:cardBackgroundColor="#00FFFFFF" />
 
@@ -115,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:outlineAmbientShadowColor="#00FFFFFF"
-                app:cardBackgroundColor="#00FFFFFF">
+                app:cardBackgroundColor="@color/Background">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -128,42 +140,50 @@
                         android:id="@+id/p1end2score1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
 
                     <Button
                         android:id="@+id/p1end2score2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
 
                     <Button
                         android:id="@+id/p1end2score3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
 
                     <TextView
                         android:id="@+id/equals2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:layout_weight="1"
                         android:outlineAmbientShadowColor="#00FFFFFF"
                         android:text="@string/eq"
@@ -174,12 +194,14 @@
                         android:id="@+id/p1end2score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
                 </LinearLayout>
 
@@ -190,7 +212,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:outlineAmbientShadowColor="#00FFFFFF"
-                app:cardBackgroundColor="#00FFFFFF">
+                app:cardBackgroundColor="@color/Background">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -203,42 +225,50 @@
                         android:id="@+id/p1end3score1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
 
                     <Button
                         android:id="@+id/p1end3score2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
 
                     <Button
                         android:id="@+id/p1end3score3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
 
                     <TextView
                         android:id="@+id/equals3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:layout_weight="1"
                         android:outlineAmbientShadowColor="#00FFFFFF"
                         android:text="@string/eq"
@@ -249,12 +279,14 @@
                         android:id="@+id/p1end3score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#ED0000"
+                        android:backgroundTint="@color/Red"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
+                        android:outlineProvider="none"
                         android:text="@string/none" />
                 </LinearLayout>
 
@@ -282,7 +314,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:outlineAmbientShadowColor="#00FFFFFF"
+        android:outlineProvider="none"
         app:cardBackgroundColor="#00FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -295,62 +327,74 @@
             android:background="#00FFFFFF"
             android:backgroundTintMode="add"
             android:orientation="vertical"
-            android:outlineAmbientShadowColor="#00FFFFFF">
+            android:outlineProvider="none">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/p2end1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:outlineAmbientShadowColor="#00FFFFFF"
+                android:outlineProvider="none"
                 app:cardBackgroundColor="#00FFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:outlineAmbientShadowColor="#00FFFFFF"
+                    android:outlineProvider="none"
                     android:padding="4dp">
 
                     <Button
                         android:id="@+id/p2end1score1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
 
                     <Button
                         android:id="@+id/p2end1score2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
 
                     <Button
                         android:id="@+id/p2end1score3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
 
                     <TextView
                         android:id="@+id/p2equals1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:layout_weight="1"
                         android:outlineAmbientShadowColor="#00FFFFFF"
                         android:text="@string/eq"
@@ -361,13 +405,16 @@
                         android:id="@+id/p2end1score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -377,55 +424,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:outlineAmbientShadowColor="#00FFFFFF"
+                android:outlineProvider="none"
                 app:cardBackgroundColor="#00FFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:outlineAmbientShadowColor="#00FFFFFF"
+                    android:outlineProvider="none"
                     android:padding="4dp">
 
                     <Button
                         android:id="@+id/p2end2score1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
 
                     <Button
                         android:id="@+id/p2end2score2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
 
                     <Button
                         android:id="@+id/p2end2score3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
 
                     <TextView
                         android:id="@+id/p2equals2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:layout_weight="1"
                         android:outlineAmbientShadowColor="#00FFFFFF"
                         android:text="@string/eq"
@@ -436,13 +495,16 @@
                         android:id="@+id/p2end2score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -452,55 +514,67 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:outlineAmbientShadowColor="#00FFFFFF"
+                android:outlineProvider="none"
                 app:cardBackgroundColor="#00FFFFFF">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:outlineAmbientShadowColor="#00FFFFFF"
+                    android:outlineProvider="none"
                     android:padding="4dp">
 
                     <Button
                         android:id="@+id/p2end3score1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
 
                     <Button
                         android:id="@+id/p2end3score2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
 
                     <Button
                         android:id="@+id/p2end3score3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
 
                     <TextView
                         android:id="@+id/p2equals3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:layout_weight="1"
                         android:outlineAmbientShadowColor="#00FFFFFF"
                         android:text="@string/eq"
@@ -511,13 +585,16 @@
                         android:id="@+id/p2end3score"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="#0014ED"
+                        android:backgroundTint="@color/Blue"
                         android:backgroundTintMode="multiply"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
-                        android:outlineAmbientShadowColor="#00FFFFFF"
-                        android:text="@string/none" />
+                        android:outlineProvider="none"
+                        android:text="@string/none"
+                        android:textColor="@color/Blue" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>

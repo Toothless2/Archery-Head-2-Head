@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/Background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/Background"
+        android:maxWidth="290dp">
+
+        <Button
+            android:id="@+id/out1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:width="45dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Gold"
+            android:clickable="true"
+            android:enabled="false"
+            android:minWidth="45dp"
+            android:text="@string/none"
+            android:textColor="@color/Gold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/out2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Gold"
+            android:clickable="true"
+            android:enabled="false"
+            android:minWidth="50dp"
+            android:text="@string/none"
+            android:textColor="@color/Gold"
+            app:layout_constraintBottom_toBottomOf="@+id/out1"
+            app:layout_constraintEnd_toStartOf="@+id/out3"
+            app:layout_constraintStart_toEndOf="@+id/out1"
+            app:layout_constraintTop_toTopOf="@+id/out1" />
+
+        <Button
+            android:id="@+id/out3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Gold"
+            android:clickable="true"
+            android:enabled="false"
+            android:minWidth="50dp"
+            android:text="@string/none"
+            android:textColor="@color/Gold"
+            app:layout_constraintBottom_toBottomOf="@+id/out2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/out2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/tenIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Gold"
+            android:clickable="true"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/ten"
+            android:textColor="@color/Gold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/out1" />
+
+        <Button
+            android:id="@+id/nineIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Gold"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/nine"
+            android:textColor="@color/Gold"
+            app:layout_constraintBottom_toBottomOf="@+id/tenIn"
+            app:layout_constraintEnd_toStartOf="@+id/eightIn"
+            app:layout_constraintStart_toEndOf="@+id/tenIn"
+            app:layout_constraintTop_toTopOf="@+id/tenIn" />
+
+        <Button
+            android:id="@+id/eightIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Red"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/eight"
+            android:textColor="@color/Red"
+            app:layout_constraintBottom_toBottomOf="@+id/nineIn"
+            app:layout_constraintEnd_toStartOf="@+id/enter"
+            app:layout_constraintTop_toTopOf="@+id/nineIn" />
+
+        <Button
+            android:id="@+id/sevenIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Red"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/seven"
+            android:textColor="@color/Red"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tenIn" />
+
+        <Button
+            android:id="@+id/sixIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Blue"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/six"
+            android:textColor="@color/Blue"
+            app:layout_constraintBottom_toBottomOf="@+id/sevenIn"
+            app:layout_constraintEnd_toStartOf="@+id/fiveIn"
+            app:layout_constraintStart_toEndOf="@+id/sevenIn"
+            app:layout_constraintTop_toTopOf="@+id/sevenIn" />
+
+        <Button
+            android:id="@+id/fiveIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Blue"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/five"
+            android:textColor="@color/Blue"
+            app:layout_constraintBottom_toBottomOf="@+id/sixIn"
+            app:layout_constraintEnd_toStartOf="@+id/enter"
+            app:layout_constraintTop_toTopOf="@+id/sixIn" />
+
+        <Button
+            android:id="@+id/fourIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Black"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/four"
+            android:textColor="@color/Black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sevenIn" />
+
+        <Button
+            android:id="@+id/threeIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Black"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/three"
+            android:textColor="@color/Black"
+            app:layout_constraintBottom_toBottomOf="@+id/fourIn"
+            app:layout_constraintEnd_toStartOf="@+id/twoIn"
+            app:layout_constraintStart_toEndOf="@+id/fourIn"
+            app:layout_constraintTop_toTopOf="@+id/fourIn" />
+
+        <Button
+            android:id="@+id/twoIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/White"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/two"
+            android:textColor="@color/White"
+            app:layout_constraintBottom_toBottomOf="@+id/threeIn"
+            app:layout_constraintEnd_toStartOf="@+id/enter"
+            app:layout_constraintTop_toTopOf="@+id/threeIn" />
+
+        <Button
+            android:id="@+id/oneIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/White"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/one"
+            android:textColor="@color/White"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fourIn" />
+
+        <Button
+            android:id="@+id/missIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Black"
+            android:minWidth="50dp"
+            android:outlineProvider="none"
+            android:text="@string/miss"
+            android:textColor="@color/Black"
+            app:layout_constraintBottom_toBottomOf="@+id/oneIn"
+            app:layout_constraintEnd_toStartOf="@+id/del"
+            app:layout_constraintStart_toEndOf="@+id/oneIn"
+            app:layout_constraintTop_toTopOf="@+id/oneIn" />
+
+        <Button
+            android:id="@+id/del"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:width="45dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Black"
+            android:outlineProvider="none"
+            android:text="@string/del"
+            android:textAllCaps="false"
+            android:textColor="@color/Black"
+            app:layout_constraintBottom_toBottomOf="@+id/missIn"
+            app:layout_constraintEnd_toStartOf="@+id/enter"
+            app:layout_constraintTop_toTopOf="@+id/missIn"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/enter"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@drawable/scorebutton"
+            android:backgroundTint="@color/Gold"
+            android:minWidth="70dp"
+            android:outlineProvider="none"
+            android:text="@string/enter"
+            android:textAllCaps="false"
+            android:textColor="@color/Gold"
+            app:layout_constraintBottom_toBottomOf="@+id/del"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/eightIn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

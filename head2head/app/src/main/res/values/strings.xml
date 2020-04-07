@@ -15,6 +15,8 @@
     <string name="ten">10</string>
     <string name="none"> </string>
     <string name="eq">=</string>
+    <string name="enter">Enter</string>
+    <string name="del">Del</string>
 
     <!-- Players -->
     <string name="player1">Luke - 0</string>
