@@ -12,7 +12,9 @@ import androidx.fragment.app.Fragment
 import com.toothless.head2head.ai.GetAIData
 import com.toothless.head2head.data.CurrentGame
 import com.toothless.head2head.fragments.*
+import com.toothless.head2head.save.SaveRound
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         GetAIData.setupAI(this)
+        SaveRound.setupSave(this)
 
         startNormalGame.setOnClickListener {
             CurrentGame.aiGame = false
@@ -55,9 +58,15 @@ class MainActivity : AppCompatActivity() {
         var nextScreen: Fragment? = null
 
         if (gameOver(scores) && CurrentGame.playersAtSameStage()) {
+
             AlertDialog.Builder(this).setTitle("Congratulations!")
                 .setMessage("Well Done ${if (scores.first > scores.second) CurrentGame.round.player1 else CurrentGame.round.player2}")
                 .setPositiveButton(android.R.string.ok) { _, _ ->
+                    Thread() {
+                        SaveRound.addRound(CurrentGame.round, CurrentGame.aiGame) // move this to its own thread
+                        SaveRound.writeJsonData(this)
+                        CurrentGame.reset()
+                    }.start()
                     supportFragmentManager.beginTransaction().remove(fragment).commit()
                 } // notify of who won and close the fragment when ok is pressed
                 .show()

@@ -35,8 +35,8 @@ class NameInputFragment(val numberOfPlayers : Int, val mainActivity: MainActivit
                 player2NameInput.visibility = View.GONE
                 aiNameSelector.visibility = View.VISIBLE
 
-                val spinValues = ArrayAdapter(mainActivity, android.R.layout.simple_spinner_item, GetAIData.getAINames())
-                spinValues.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                val spinValues = ArrayAdapter(mainActivity, R.layout.ai_spinner_item, GetAIData.getAINames())
+//                spinValues.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
                 aiNameSelector.adapter = spinValues
             }
 

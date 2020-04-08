@@ -27,6 +27,17 @@ object GetAIData {
         return names
     }
 
+    fun getAIScore(aiId : Int, currentScores : Pair<Int, Int>)
+    {
+        val ai = aiData.getJSONArray("ais").getJSONObject(aiId)
+        val scores = mutableListOf<Int>()
+
+        val score = ai.getDouble("score")
+        val endAverage = score / 20.0
+        val variance = ai.getDouble("variance")
+        val throwChance = ai.getDouble("throwChance")
+    }
+
     fun getAIID(aiName : String) : Int
     {
         val ais = aiData.getJSONArray("ais")

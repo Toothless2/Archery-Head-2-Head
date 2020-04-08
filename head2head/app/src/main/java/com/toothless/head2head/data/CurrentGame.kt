@@ -12,6 +12,13 @@ object CurrentGame {
         round = Round(player1, player2)
     }
 
+    fun reset()
+    {
+        aiGame = false
+        selectedAi = -1
+        round = Round("", "")
+    }
+
     fun addEnd(score: List<Int>, player : Int, end : Int)
     {
         round.updatePair(score, player, end)

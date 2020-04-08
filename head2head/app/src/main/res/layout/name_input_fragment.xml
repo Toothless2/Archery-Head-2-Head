@@ -30,6 +30,7 @@
                 android:id="@+id/player1NameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
                 android:autofillHints="@string/playerName1Hint"
                 android:backgroundTint="@color/Red"
                 android:ems="10"
@@ -43,6 +44,7 @@
                 android:id="@+id/player2NameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
                 android:autofillHints="@string/playerName2Hint"
                 android:backgroundTint="@color/Blue"
                 android:ems="10"
@@ -56,12 +58,17 @@
                 android:id="@+id/aiNameSelector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
+                android:backgroundTint="@color/Blue"
+                android:outlineProvider="none"
+                android:popupBackground="@color/Background"
                 android:visibility="gone" />
 
             <Button
                 android:id="@+id/confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginVertical="4dp"
                 android:background="@drawable/scorebutton"
                 android:backgroundTint="@color/Gold"
                 android:outlineProvider="none"
