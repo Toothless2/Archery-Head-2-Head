@@ -12,26 +12,65 @@
         android:layout_height="match_parent"
         android:background="@color/Background">
 
-        <Button
-            android:id="@+id/startNormalGame"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Start"
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="224dp"
+            android:layout_height="96dp"
+            android:contentDescription="@string/logo"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="271dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_text" />
 
-        <TextView
-            android:id="@+id/textView"
+        <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="8dp"
-            android:text="@android:string/untitled"
-            app:layout_constraintBottom_toTopOf="@+id/startNormalGame"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/startNormalGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/scorebutton"
+                android:backgroundTint="@color/Gold"
+                android:minWidth="200dp"
+                android:text="@string/startNormalGame"
+                android:textAllCaps="false"
+                android:textColor="@color/Gold" />
+
+            <Button
+                android:id="@+id/startAIGame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/scorebutton"
+                android:backgroundTint="@color/Red"
+                android:minWidth="200dp"
+                android:text="@string/startAIGame"
+                android:textAllCaps="false"
+                android:textColor="@color/Red" />
+
+            <Button
+                android:id="@+id/viewGames"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/scorebutton"
+                android:backgroundTint="@color/Blue"
+                android:enabled="false"
+                android:minWidth="200dp"
+                android:text="@string/viewRounds"
+                android:textAllCaps="false"
+                android:textColor="@color/Blue" />
+
+        </LinearLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

@@ -33,34 +33,36 @@ class FirstRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore {
         updateText()
     }
 
-    fun assignFunctionsToButtons()
-    {
+    fun assignFunctionsToButtons() {
         p1end1.setOnClickListener {
             openKeyboard(1, 1)
         }
 
-        p2end1.setOnClickListener {
-            openKeyboard(2, 1)
-        }
-
         p1end2.setOnClickListener {
-            if(CurrentGame.completedEnds() >= 1)
+            if (CurrentGame.completedEnds() >= 1)
                 openKeyboard(1, 2)
         }
 
-        p2end2.setOnClickListener {
-            if(CurrentGame.completedEnds() >= 1)
-                openKeyboard(2, 2)
-        }
-
         p1end3.setOnClickListener {
-            if(CurrentGame.completedEnds() >= 2)
+            if (CurrentGame.completedEnds() >= 2)
                 openKeyboard(1, 3)
         }
 
-        p2end3.setOnClickListener {
-            if(CurrentGame.completedEnds() >= 2)
-                openKeyboard(2, 3)
+
+        if (!CurrentGame.aiGame) {
+            p2end1.setOnClickListener {
+                openKeyboard(2, 1)
+            }
+
+            p2end2.setOnClickListener {
+                if (CurrentGame.completedEnds() >= 1)
+                    openKeyboard(2, 2)
+            }
+
+            p2end3.setOnClickListener {
+                if (CurrentGame.completedEnds() >= 2)
+                    openKeyboard(2, 3)
+            }
         }
     }
 
@@ -83,9 +85,15 @@ class FirstRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore {
 
         CurrentGame.addEnd(scores, player, end)
 
+        if (CurrentGame.aiGame) {
+            CurrentGame.addEnd(CurrentGame.getAiScore(end), 2, end)
+            updateButtons(CurrentGame.round.scores[end - 1].p2End, 2, end)
+        }
+
         updateText()
 
         parent.continueGame(this)
+
     }
 
     fun updateText()

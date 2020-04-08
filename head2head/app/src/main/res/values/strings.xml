@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Head 2 Head</string>
+    <string name="startNormalGame">Start PVP Game</string>
+    <string name="startAIGame">Start AI Game</string>
+    <string name="viewRounds"><strike>View Rounds</strike></string>
 
     <!-- Players -->
     <string name="playerName1Hint">Player 1</string>
@@ -25,8 +28,12 @@
     <!-- Players -->
     <string name="player1">Luke - 0</string>
     <string name="player2">😝 - player2</string>
-    <string name="divider">Divider For Players</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shootoff_player1">p1 Won</string>
+    <string name="shootoff_player2">p2 Won</string>
+    <string name="shootoff_tie">Tie</string>
+
+    <!-- Image Descriptions -->
+    <string name="divider">Divider For Players</string>
+    <string name="logo">Logo</string>
 </resources>

@@ -1,0 +1,18 @@
+{
+  "ais": [
+    {
+      "id": 0,
+      "name": "Matt",
+      "score": 580,
+      "variance": 5,
+      "throwChance": 0
+    },
+    {
+      "id": 0,
+      "name": "Luke",
+      "score": 560,
+      "variance": 10,
+      "throwChance": 20
+    }
+  ]
+}

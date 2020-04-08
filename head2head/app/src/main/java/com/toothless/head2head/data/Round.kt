@@ -73,6 +73,7 @@ class Round(
 }
 
 class EndPair {
+
     var p1End = mutableListOf<Int>()
     var p2End = mutableListOf<Int>()
 
@@ -103,7 +104,7 @@ class EndPair {
     get() {
         if(p1End.isNullOrEmpty() && p2End.isNullOrEmpty())
             return false
-        if(p1End.size == 3 && p2End.size == 3)
+        if(p1End.size == p2End.size)
             return true
 
         return false

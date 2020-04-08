@@ -52,6 +52,12 @@
                 android:textColor="@color/Gold"
                 android:textColorHint="#CDDC39" />
 
+            <Spinner
+                android:id="@+id/aiNameSelector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
             <Button
                 android:id="@+id/confirm"
                 android:layout_width="match_parent"

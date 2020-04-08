@@ -39,9 +39,9 @@ class ShootoffRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore
             openKeyboard(1, 6)
         }
 
-        p2end1.setOnClickListener {
-            openKeyboard(2, 6)
-        }
+//        p2end1.setOnClickListener {
+//            openKeyboard(2, 6)
+//        }
     }
 
     fun openKeyboard(player : Int, end : Int)
@@ -62,6 +62,11 @@ class ShootoffRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore
         updateButtons(scores, player)
 
         CurrentGame.addEnd(scores, player, end)
+
+        if (CurrentGame.aiGame) {
+            CurrentGame.addEnd(CurrentGame.getAiScore(end), 2, end)
+            updateButtons(CurrentGame.round.scores[end - 1].p2End, 2)
+        }
 
         updateText()
 

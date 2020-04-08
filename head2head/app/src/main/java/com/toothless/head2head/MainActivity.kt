@@ -9,11 +9,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDialogFragment
 import androidx.fragment.app.Fragment
+import com.toothless.head2head.ai.GetAIData
 import com.toothless.head2head.data.CurrentGame
-import com.toothless.head2head.fragments.FirstRoundScoreInput
-import com.toothless.head2head.fragments.NameInputFragment
-import com.toothless.head2head.fragments.SecondRoundScoreInput
-import com.toothless.head2head.fragments.ShootoffRoundScoreInput
+import com.toothless.head2head.fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,8 +20,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        GetAIData.setupAI(this)
+
         startNormalGame.setOnClickListener {
+            CurrentGame.aiGame = false
             startGame(2)
+        }
+
+        startAIGame.setOnClickListener {
+            CurrentGame.aiGame = true
+            startGame(1)
         }
     }
 
@@ -37,42 +43,48 @@ class MainActivity : AppCompatActivity() {
 
     fun continueGame(fragment: Fragment) {
 
-        if(CurrentGame.round.scores.size == 0)
-        {
+        if (CurrentGame.round.scores.size == 0) { // to start the game
             supportFragmentManager.beginTransaction().remove(fragment).commit()
             val first = FirstRoundScoreInput(this)
-            supportFragmentManager.beginTransaction().add(mainActivityLayout.id, first).addToBackStack(null).commit()
+            supportFragmentManager.beginTransaction().add(mainActivityLayout.id, first)
+                .addToBackStack(null).commit()
             return
         }
 
         val scores = CurrentGame.getTotalScores()
+        var nextScreen: Fragment? = null
 
-        if(gameOver(scores) && CurrentGame.playersAtSameStage())
-        {
-            val notification = AlertDialog.Builder(this)
-            notification.setTitle("Congratulations!").setMessage("Well Done ${if(scores.first > scores.second) CurrentGame.round.player1 else CurrentGame.round.player2 }").setPositiveButton(android.R.string.ok, DialogInterface.OnClickListener { dialogInterface, i ->
-                supportFragmentManager.beginTransaction().remove(fragment).commit()
-            }).show()
+        if (gameOver(scores) && CurrentGame.playersAtSameStage()) {
+            AlertDialog.Builder(this).setTitle("Congratulations!")
+                .setMessage("Well Done ${if (scores.first > scores.second) CurrentGame.round.player1 else CurrentGame.round.player2}")
+                .setPositiveButton(android.R.string.ok) { _, _ ->
+                    supportFragmentManager.beginTransaction().remove(fragment).commit()
+                } // notify of who won and close the fragment when ok is pressed
+                .show()
 
             return
-        }
+        } else if (CurrentGame.completedEnds() == 3 && CurrentGame.playersAtSameStage()) // continue as normal
+            nextScreen = SecondRoundScoreInput(this)
+        else if (CurrentGame.completedEnds() >= 5)
+            nextScreen = shootoffScreenLoad()
 
-        if (CurrentGame.completedEnds() == 3 && CurrentGame.playersAtSameStage()) { // continue as normal
-
-            supportFragmentManager.beginTransaction().remove(fragment!!).commit()
-            val secondRound = SecondRoundScoreInput(this)
-            supportFragmentManager.beginTransaction().replace(mainActivityLayout.id, secondRound).addToBackStack(null).commit()
-            return
-        }
-
-        if (CurrentGame.completedEnds() == 5 && scores.first == scores.second) { // shootoff time :)
-
+        if (nextScreen != null) {
             supportFragmentManager.beginTransaction().remove(fragment).commit()
-            val secondRound = ShootoffRoundScoreInput(this)
-            supportFragmentManager.beginTransaction().replace(mainActivityLayout.id, secondRound).addToBackStack(null).commit()
-            return
+            supportFragmentManager.beginTransaction().replace(mainActivityLayout.id, nextScreen)
+                .addToBackStack(null).commit()
         }
     }
 
-    fun gameOver(scores : Pair<Int, Int>) = (scores.first >= 6 || scores.second >= 6)
+    private fun shootoffScreenLoad() : Fragment
+    {
+        lateinit var shootoff : Fragment
+        if(CurrentGame.aiGame)
+            shootoff = ShootoffRoundScoreInput(this)
+        else
+            shootoff = ShootoffPlayersInput(this)
+
+        return shootoff
+    }
+
+    fun gameOver(scores : Pair<Int, Int>) = (scores.first != scores.second && (scores.second >= 6 || scores.first >= 6))
 }
