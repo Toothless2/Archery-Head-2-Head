@@ -1,5 +1,7 @@
 package com.toothless.head2head.data
 
+import com.toothless.head2head.ai.GetAIData
+
 object CurrentGame {
     lateinit var round : Round
     private set
@@ -55,6 +57,6 @@ object CurrentGame {
         if(end -1 <= round.scores.lastIndex && round.scores[end-1].completePair)
             return round.scores[end-1].p2End
 
-        return listOf(0, 1, 5)
+        return GetAIData.getAIScore(selectedAi, round.getMatchScores(), if(end <=5) 3 else 1)
     }
 }

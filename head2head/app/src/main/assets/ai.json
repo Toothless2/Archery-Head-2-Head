@@ -8,11 +8,25 @@
       "throwChance": 0
     },
     {
-      "id": 0,
+      "id": 1,
       "name": "Luke",
       "score": 560,
+      "variance": 2,
+      "throwChance": 0.4
+    },
+    {
+      "id": 2,
+      "name": "Max",
+      "score": 545,
+      "variance": 5,
+      "throwChance": 0.6
+    },
+    {
+      "id": 3,
+      "name": "Alex",
+      "score": 30,
       "variance": 10,
-      "throwChance": 20
+      "throwChance": 0.1
     }
   ]
 }

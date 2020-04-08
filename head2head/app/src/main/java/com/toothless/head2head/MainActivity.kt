@@ -34,6 +34,10 @@ class MainActivity : AppCompatActivity() {
             CurrentGame.aiGame = true
             startGame(1)
         }
+
+        viewGames.setOnClickListener {
+            supportFragmentManager.beginTransaction().add(mainActivityLayout.id, ViewSavedRounds(this)).addToBackStack(null).commit()
+        }
     }
 
     fun startGame(players : Int)

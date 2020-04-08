@@ -2,7 +2,7 @@
     <string name="app_name">Head 2 Head</string>
     <string name="startNormalGame">Start PVP Game</string>
     <string name="startAIGame">Start AI Game</string>
-    <string name="viewRounds"><strike>View Rounds</strike></string>
+    <string name="viewRounds">View Rounds</string>
 
     <!-- Players -->
     <string name="playerName1Hint">Player 1</string>
@@ -36,4 +36,7 @@
     <!-- Image Descriptions -->
     <string name="divider">Divider For Players</string>
     <string name="logo">Logo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

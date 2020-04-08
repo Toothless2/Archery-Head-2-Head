@@ -11,6 +11,8 @@ import java.nio.charset.Charset
 
 object SaveRound {
     lateinit var json : JSONObject
+    private set
+
     fun setupSave(ctx : Context)
     {
         json = getJsonData(ctx)
@@ -30,9 +32,36 @@ object SaveRound {
         json.getJSONArray("rounds").put(jsonObj)
     }
 
+    fun getSavedRoundFormatted() : List<SavedRoundJSON>
+    {
+        val rounds = json.getJSONArray("rounds")
+        val returnList  = mutableListOf<SavedRoundJSON>()
+
+        for(i in 0 until rounds.length())
+        {
+            val temp = rounds[i] as JSONObject
+            val tempScores = temp.getJSONArray("scores")
+            returnList.add(SavedRoundJSON(temp.getInt("id"), temp.getString("player1"), temp.getString("player2"), tempScores[0] as Int, tempScores[1] as Int, temp.getBoolean("aiGame")))
+        }
+
+        return returnList
+    }
+
     fun removeRound(roundId : Int)
     {
-        json.getJSONArray("rounds").remove(roundId)
+        var roundPos = -1
+
+        for (i in 0 until json.getJSONArray("rounds").length())
+        {
+            if((json.getJSONArray("rounds")[i] as JSONObject).getInt("id") == roundId)
+            {
+                roundPos = i
+                break
+            }
+        }
+
+        if(roundPos != -1)
+            json.getJSONArray("rounds").remove(roundPos)
     }
 
     fun clearAllData(ctx:Context)
