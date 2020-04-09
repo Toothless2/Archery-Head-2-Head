@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/Background"
     android:outlineAmbientShadowColor="#00FFFFFF"
-    tools:context=".fragments.ShootoffRoundScoreInput">
+    tools:context=".fragments.ShootoffAIInput">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/player1"
@@ -157,7 +157,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/player2Name"
+        android:id="@+id/player1Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -190,5 +190,14 @@
         android:outlineAmbientShadowColor="#00FFFFFF"
         android:visibility="invisible"
         app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/keyboardHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

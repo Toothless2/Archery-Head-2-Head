@@ -2,11 +2,9 @@ package com.toothless.head2head.scoreInput
 
 import android.view.View
 import com.toothless.head2head.R
-import com.toothless.head2head.data.CurrentGame
+import com.toothless.head2head.GameManager
 import com.toothless.head2head.events.EventBus
 import kotlinx.android.synthetic.main.layout_score_input_keyboard.view.*
-import java.security.acl.LastOwnerException
-import kotlin.math.round
 
 class ScoreInputKeyboard(val view: View, val player : Int, val end : Int) {
 
@@ -16,9 +14,9 @@ class ScoreInputKeyboard(val view: View, val player : Int, val end : Int) {
     {
         setButtonBehaviour()
 
-        if(CurrentGame.round.scores.lastIndex >= end - 1) // if the end has already been filled out add the values into the keyboard
+        if(GameManager.round.scores.lastIndex >= end - 1) // if the end has already been filled out add the values into the keyboard
         {
-            val scores = CurrentGame.round.scores[end - 1]
+            val scores = GameManager.getEnd(end)
             this.scores.addAll(if(player==1) scores.p1End else scores.p2End)
             updateDisplay()
         }

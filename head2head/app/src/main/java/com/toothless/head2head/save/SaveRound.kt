@@ -1,7 +1,7 @@
 package com.toothless.head2head.save
 
 import android.content.Context
-import com.toothless.head2head.data.Round
+import com.toothless.head2head.round.Round
 import org.json.JSONObject
 import java.io.File
 import java.io.FileReader
@@ -18,14 +18,14 @@ object SaveRound {
         json = getJsonData(ctx)
     }
 
-    fun addRound(round : Round, aiGame : Boolean)
+    fun addRound(round : Round)
     {
         val scores = round.getMatchScores()
         val jsonString = "{ \"id\":${json.getJSONArray("rounds").length()}," +
                 "\"player1\":\"${round.player1}\"," +
                 "\"player2\": \"${round.player2}\"," +
                 "\"scores\": [${scores.first}, ${scores.second}]," +
-                "\"aiGame\": $aiGame }"
+                "\"aiGame\": ${round.aiGame} }"
 
         val jsonObj = JSONObject(jsonString)
 
