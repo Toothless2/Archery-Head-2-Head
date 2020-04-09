@@ -75,8 +75,8 @@ class FirstRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore {
 
         keyboard = builder.create()
 
-        keyboard!!.show()
-        keyboard!!.window!!.setBackgroundDrawable(null)
+        keyboard?.show()
+        keyboard?.window?.setBackgroundDrawable(null)
     }
 
     override fun saveScore(scores: List<Int>, player : Int, end : Int) {

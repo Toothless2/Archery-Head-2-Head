@@ -53,7 +53,8 @@ class ShootoffAIInput(val parent : MainActivity) : Fragment(), SaveScore {
 
         keyboard = builder.create()
 
-        keyboard!!.show()
+        keyboard?.show()
+        keyboard?.window?.setBackgroundDrawable(null)
     }
 
     override fun saveScore(scores: List<Int>, player : Int, end : Int) {

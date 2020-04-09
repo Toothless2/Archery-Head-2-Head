@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/Background"
     android:outlineAmbientShadowColor="#00FFFFFF"
+    android:clickable="true"
     tools:context=".fragments.ShootoffAIInput">
 
     <androidx.cardview.widget.CardView

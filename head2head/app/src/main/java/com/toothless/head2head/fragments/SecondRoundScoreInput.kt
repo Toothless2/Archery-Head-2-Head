@@ -12,30 +12,7 @@ import com.toothless.head2head.GameManager
 import com.toothless.head2head.events.EventBus
 import com.toothless.head2head.events.SaveScore
 import com.toothless.head2head.scoreInput.ScoreInputKeyboard
-import kotlinx.android.synthetic.main.first_round_score_input_fragment.*
 import kotlinx.android.synthetic.main.second_round_score_input_fragment.*
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end1
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end1score
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end1score1
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end1score2
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end1score3
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end2
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end2score
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end2score1
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end2score2
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end2score3
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end1
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end1score
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end1score1
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end1score2
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end1score3
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end2
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end2score
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end2score1
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end2score2
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end2score3
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.player1Name
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.player2Name
 
 
 class SecondRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore {
@@ -89,6 +66,7 @@ class SecondRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore {
         keyboard = builder.create()
 
         keyboard!!.show()
+        keyboard?.window?.setBackgroundDrawable(null)
     }
 
     override fun saveScore(scores: List<Int>, player : Int, end : Int) {
