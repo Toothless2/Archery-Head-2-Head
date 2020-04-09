@@ -81,7 +81,7 @@ class SecondRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore {
     fun openKeyboard(player : Int, end : Int)
     {
         val builder = AlertDialog.Builder(context)
-        val inf = layoutInflater.inflate(R.layout.layout_score_input_keyboard, keyboardHolder, false)
+        val inf = layoutInflater.inflate(R.layout.layout_score_input_keyboard, view as ViewGroup, false)
         val kb = ScoreInputKeyboard(inf, player, end)
         kb.setupKeyboard()
         builder.setView(inf)

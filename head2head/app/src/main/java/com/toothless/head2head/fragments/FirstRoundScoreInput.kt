@@ -48,7 +48,6 @@ class FirstRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore {
                 openKeyboard(1, 3)
         }
 
-
         if (!GameManager.isAiGame) {
             p2end1.setOnClickListener {
                 openKeyboard(2, 1)
@@ -69,7 +68,7 @@ class FirstRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore {
     fun openKeyboard(player : Int, end : Int)
     {
         val builder = AlertDialog.Builder(context)
-        val inf = layoutInflater.inflate(R.layout.layout_score_input_keyboard, keyboardHolder, false)
+        val inf = layoutInflater.inflate(R.layout.layout_score_input_keyboard, view as ViewGroup, false)
         val kb = ScoreInputKeyboard(inf, player, end)
         kb.setupKeyboard()
         builder.setView(inf)
@@ -77,6 +76,7 @@ class FirstRoundScoreInput(val parent : MainActivity) : Fragment(), SaveScore {
         keyboard = builder.create()
 
         keyboard!!.show()
+        keyboard!!.window!!.setBackgroundDrawable(null)
     }
 
     override fun saveScore(scores: List<Int>, player : Int, end : Int) {

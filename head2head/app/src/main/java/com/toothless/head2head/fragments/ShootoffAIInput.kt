@@ -46,7 +46,7 @@ class ShootoffAIInput(val parent : MainActivity) : Fragment(), SaveScore {
     private fun openKeyboard()
     {
         val builder = AlertDialog.Builder(context)
-        val inf = layoutInflater.inflate(R.layout.layout_score_input_keyboard, keyboardHolder, false)
+        val inf = layoutInflater.inflate(R.layout.layout_score_input_keyboard, view as ViewGroup, false)
         val kb = ScoreInputKeyboard(inf, 1, GameManager.round.scores.size)
         kb.setupKeyboard()
         builder.setView(inf)
