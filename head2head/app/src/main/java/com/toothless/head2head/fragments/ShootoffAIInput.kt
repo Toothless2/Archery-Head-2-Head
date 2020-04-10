@@ -1,6 +1,7 @@
 package com.toothless.head2head.fragments
 
 import android.app.AlertDialog
+import android.opengl.Visibility
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,20 +11,21 @@ import com.toothless.head2head.MainActivity
 import com.toothless.head2head.R
 import com.toothless.head2head.GameManager
 import com.toothless.head2head.events.EventBus
-import com.toothless.head2head.events.SaveScore
+import com.toothless.head2head.events.data.KeyboardEvent
+import com.toothless.head2head.events.data.ScoreInputEvent
 import com.toothless.head2head.scoreInput.ScoreInputKeyboard
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.*
+import kotlinx.android.synthetic.main.layout_score_input_keyboard.view.*
 import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end1
 import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end1score1
 import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end1score1
 import kotlinx.android.synthetic.main.second_round_score_input_fragment.player1Name
 import kotlinx.android.synthetic.main.second_round_score_input_fragment.player2Name
-import kotlinx.android.synthetic.main.shootoff_fragment.*
 
 
-class ShootoffAIInput(val parent : MainActivity) : Fragment(), SaveScore {
+class ShootoffAIInput(val parent : MainActivity) : Fragment(), IScoreInput {
 
-    var keyboard : AlertDialog? = null
+    private val scoreInputEventHandler:(ScoreInputEvent) -> Unit = {(scores, player, end) -> scoreInput(scores, player, end)}
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.shootoff_fragment, container, false)
     }
@@ -31,7 +33,7 @@ class ShootoffAIInput(val parent : MainActivity) : Fragment(), SaveScore {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        EventBus.SubscribeSaveScoreEvent(this)
+        EventBus.scoreInputEvent += scoreInputEventHandler
         assignFunctionsToButtons()
         updateText()
     }
@@ -39,41 +41,40 @@ class ShootoffAIInput(val parent : MainActivity) : Fragment(), SaveScore {
     private fun assignFunctionsToButtons()
     {
         p1end1.setOnClickListener {
-            openKeyboard()
+//            displayKeyboard()
+            EventBus.keyboardEvent(KeyboardEvent(this, 1, GameManager.round.scores.size+1, 1))
         }
     }
 
-    private fun openKeyboard()
-    {
-        val builder = AlertDialog.Builder(context)
-        val inf = layoutInflater.inflate(R.layout.layout_score_input_keyboard, view as ViewGroup, false)
-        val kb = ScoreInputKeyboard(inf, 1, GameManager.round.scores.size)
-        kb.setupKeyboard()
-        builder.setView(inf)
+//    private var keyboard : AlertDialog? = null
+//    private fun displayKeyboard() {
+//        val builder = AlertDialog.Builder(context)
+//        val inf = parent.layoutInflater.inflate(R.layout.layout_score_input_keyboard, view as ViewGroup, false)
+//        inf.out2.visibility = View.GONE
+//        inf.out3.visibility = View.GONE
+//        val kb = ScoreInputKeyboard(inf, 1, GameManager.round.scores.size + 1, 1)
+//        kb.setupKeyboard()
+//        builder.setView(inf)
+//
+//        keyboard = builder.create()
+//        keyboard?.show()
+//        keyboard?.window?.setBackgroundDrawable(null)
+//    }
 
-        keyboard = builder.create()
+    override fun scoreInput(scores: List<Int>, player : Int, end : Int) {
+//        keyboard?.dismiss()
+        super.scoreInput(scores, player, end)
 
-        keyboard?.show()
-        keyboard?.window?.setBackgroundDrawable(null)
-    }
-
-    override fun saveScore(scores: List<Int>, player : Int, end : Int) {
-        keyboard?.dismiss()
-        updateButtons(scores, player)
-
-        GameManager.addEnd(scores, player, end)
-
-        if (GameManager.isAiGame) {
-            GameManager.addEnd(GameManager.getAiEndScore(end), 2, end)
-            updateButtons(GameManager.getEnd(end).p2End, 2)
+        if(GameManager.gameOver())
+            parent.continueGame(this)
+        else
+        {
+            p1end1score1.text = ""
+            p2end1score1.text = ""
         }
-
-        updateText()
-
-        parent.continueGame(this)
     }
 
-    private fun updateText()
+    override fun updateText()
     {
         if(!GameManager.playersAtSameStage())
             return
@@ -83,7 +84,7 @@ class ShootoffAIInput(val parent : MainActivity) : Fragment(), SaveScore {
         player2Name.text = scores.second
     }
 
-    private fun updateButtons(scores: List<Int>, player : Int) {
+    override fun updateScoreDisplay(scores: List<Int>, player : Int, end: Int) {
         when (player) {
             1 ->
                 p1end1score1.text = scores[0].toString()
@@ -93,7 +94,7 @@ class ShootoffAIInput(val parent : MainActivity) : Fragment(), SaveScore {
     }
 
     override fun onDestroyView() {
-        EventBus.UnSubscribeSaveScoreEvent(this)
+        EventBus.scoreInputEvent -= scoreInputEventHandler
         super.onDestroyView()
     }
 }

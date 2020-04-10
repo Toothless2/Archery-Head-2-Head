@@ -1,26 +1,15 @@
 package com.toothless.head2head.events
 
-import android.hardware.SensorEventListener
+import com.toothless.head2head.events.data.ContinueGameEvent
+import com.toothless.head2head.events.data.KeyboardEvent
+import com.toothless.head2head.events.data.ScoreInputEvent
+
+fun <T> event() = SetEvent<T>()
+fun <T> namedEvent() = MapEvent<T>()
 
 object EventBus {
-    private var saveScoreEventListeners = mutableListOf<SaveScore>()
 
-    fun SubscribeSaveScoreEvent(listener: SaveScore)
-    {
-        if(saveScoreEventListeners.contains(listener))
-            return
-
-        saveScoreEventListeners.add(listener)
-    }
-
-    fun UnSubscribeSaveScoreEvent(listener: SaveScore)
-    {
-        if(saveScoreEventListeners.contains(listener))
-            saveScoreEventListeners.remove(listener)
-    }
-
-    fun CallSaveScoreEvent(scores : List<Int>, player : Int, end : Int)
-    {
-        saveScoreEventListeners.forEach { it.saveScore(scores, player, end) }
-    }
+    val scoreInputEvent = event<ScoreInputEvent>()
+    val keyboardEvent = event<KeyboardEvent>()
+    val continueGameEvent = event<ContinueGameEvent>()
 }

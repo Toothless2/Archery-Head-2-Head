@@ -1,12 +1,63 @@
 package com.toothless.head2head.scoreInput
 
+import android.app.AlertDialog
 import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.toothless.head2head.R
 import com.toothless.head2head.GameManager
 import com.toothless.head2head.events.EventBus
+import com.toothless.head2head.events.data.KeyboardEvent
+import com.toothless.head2head.events.data.ScoreInputEvent
 import kotlinx.android.synthetic.main.layout_score_input_keyboard.view.*
 
-class ScoreInputKeyboard(val view: View, val player : Int, val end : Int) {
+class ScoreInputKeyboard(val view: View, val player : Int, val end : Int, val maxScores : Int = 3) {
+
+    companion object
+    {
+        private val openKbEventHandler : (KeyboardEvent) -> Unit = {(parent, player, end, maxScores) -> openKeyboard(parent, player, end, maxScores)}
+        private val closeKbEventHandler : (ScoreInputEvent) -> Unit = { closeKeyboard()}
+
+        fun assignEvents()
+        {
+            EventBus.scoreInputEvent += closeKbEventHandler
+            EventBus.keyboardEvent += openKbEventHandler
+        }
+
+        fun removeEvents()
+        {
+            EventBus.scoreInputEvent -= closeKbEventHandler
+            EventBus.keyboardEvent -= openKbEventHandler
+        }
+
+        private var keyboard : AlertDialog? = null
+
+        private fun openKeyboard(parent : Fragment, player : Int, end : Int, maxScores : Int) {
+            if (keyboard != null && keyboard?.isShowing!!)
+                return
+
+            val builder = AlertDialog.Builder(parent.context)
+            val inf = parent.layoutInflater.inflate(R.layout.layout_score_input_keyboard, parent.view as ViewGroup, false)
+
+            if (maxScores == 1) { // hides 2 of the core output boxes on the keyboard (used in shoot-off)
+                inf.out2.visibility = View.GONE
+                inf.out3.visibility = View.GONE
+            }
+
+            val kb = ScoreInputKeyboard(inf, player, end, maxScores)
+            kb.setupKeyboard()
+            builder.setView(inf)
+
+            keyboard = builder.create()
+            keyboard?.show()
+            keyboard?.window?.setBackgroundDrawable(null)
+        }
+
+        private fun closeKeyboard()
+        {
+            keyboard?.dismiss()
+        }
+    }
 
     private var scores = mutableListOf<Int>()
 
@@ -22,7 +73,7 @@ class ScoreInputKeyboard(val view: View, val player : Int, val end : Int) {
         }
     }
 
-    fun setButtonBehaviour()
+    private fun setButtonBehaviour()
     {
         view.tenIn.setOnClickListener {
             addButtonScore(10) }
@@ -65,11 +116,11 @@ class ScoreInputKeyboard(val view: View, val player : Int, val end : Int) {
     }
 
     private fun saveScore() {
-        if(scores.size != 3)
-            while (scores.size < 3)
+        if(scores.size != maxScores)
+            while (scores.size < maxScores)
                 scores.add(0)
 
-        EventBus.CallSaveScoreEvent(scores.sorted().reversed(), player, end)
+        EventBus.scoreInputEvent(ScoreInputEvent(scores.sorted().reversed(), player, end))
     }
 
     private fun removeButtonScore()
@@ -89,7 +140,7 @@ class ScoreInputKeyboard(val view: View, val player : Int, val end : Int) {
 
     private fun addButtonScore(score : Int)
     {
-        if(scores.size >= 3) // stops more than 3 scores being input
+        if(scores.size >= maxScores)
             return
 
         scores.add(score)

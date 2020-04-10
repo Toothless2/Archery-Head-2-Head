@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@android:color/transparent">
@@ -14,54 +15,63 @@
         android:minWidth="290dp"
         android:padding="10dp">
 
-        <Button
-            android:id="@+id/out1"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:width="45dp"
-            android:background="@drawable/scorebutton"
-            android:backgroundTint="@color/Gold"
-            android:clickable="true"
-            android:enabled="false"
-            android:minWidth="45dp"
-            android:text="@string/none"
-            android:textColor="@color/Gold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/out2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/scorebutton"
-            android:backgroundTint="@color/Gold"
-            android:clickable="true"
-            android:enabled="false"
-            android:minWidth="50dp"
-            android:text="@string/none"
-            android:textColor="@color/Gold"
-            app:layout_constraintBottom_toBottomOf="@+id/out1"
-            app:layout_constraintEnd_toStartOf="@+id/out3"
-            app:layout_constraintStart_toEndOf="@+id/out1"
-            app:layout_constraintTop_toTopOf="@+id/out1" />
-
-        <Button
-            android:id="@+id/out3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/scorebutton"
-            android:backgroundTint="@color/Gold"
-            android:clickable="true"
-            android:enabled="false"
-            android:minWidth="50dp"
-            android:text="@string/none"
-            android:textColor="@color/Gold"
-            app:layout_constraintBottom_toBottomOf="@+id/out2"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/out2"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/out1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:width="45dp"
+                android:background="@drawable/scorebutton"
+                android:backgroundTint="@color/Gold"
+                android:clickable="true"
+                android:enabled="false"
+                android:minWidth="45dp"
+                android:text="@string/none"
+                android:textColor="@color/Gold"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/out2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/scorebutton"
+                android:backgroundTint="@color/Gold"
+                android:clickable="true"
+                android:enabled="false"
+                android:minWidth="50dp"
+                android:text="@string/none"
+                android:textColor="@color/Gold"
+                android:visibility="visible"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/out3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/scorebutton"
+                android:backgroundTint="@color/Gold"
+                android:clickable="true"
+                android:enabled="false"
+                android:minWidth="50dp"
+                android:text="@string/none"
+                android:textColor="@color/Gold"
+                android:visibility="visible"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/tenIn"
@@ -76,7 +86,7 @@
             android:text="@string/ten"
             android:textColor="@color/Gold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/out1" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
         <Button
             android:id="@+id/nineIn"

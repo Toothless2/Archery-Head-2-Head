@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.toothless.head2head.ai.AIManager
 import com.toothless.head2head.fragments.*
 import com.toothless.head2head.save.SaveRound
+import com.toothless.head2head.scoreInput.ScoreInputKeyboard
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun startGame(players : Int)
     {
+        ScoreInputKeyboard.assignEvents()
         GameManager.isAiGame = players != 2 // if there isnt 2 players then its an ai game
         val nameInput = NameInputFragment(players, this)
         supportFragmentManager.beginTransaction().add(mainActivityLayout.id, nameInput).addToBackStack(null).commit()
@@ -51,14 +53,22 @@ class MainActivity : AppCompatActivity() {
 
             AlertDialog.Builder(this).setTitle("Congratulations!")
                     .setMessage("Well Done ${GameManager.getLeader()}")
-                    .setPositiveButton(android.R.string.ok) { _, _ ->
+                    .setPositiveButton(android.R.string.ok) { _, _ -> // notify of who won and close the fragment when ok is pressed
                         Thread() {
                             SaveRound.addRound(GameManager.round)
                             SaveRound.writeJsonData(this)
                             GameManager.reset()
                         }.start()
                         supportFragmentManager.beginTransaction().remove(fragment).commit()
-                    } // notify of who won and close the fragment when ok is pressed
+                    }
+                    .setOnDismissListener {//does the same thing as pressing ok but needs to be assigned properly
+                        Thread() {
+                            SaveRound.addRound(GameManager.round)
+                            SaveRound.writeJsonData(this)
+                            GameManager.reset()
+                        }.start()
+                        supportFragmentManager.beginTransaction().remove(fragment).commit()
+                    }
                     .show()
 
             return

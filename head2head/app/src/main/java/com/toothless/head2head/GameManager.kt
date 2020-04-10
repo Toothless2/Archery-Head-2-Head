@@ -4,6 +4,7 @@ import com.toothless.head2head.ai.AI
 import com.toothless.head2head.ai.AIManager
 import com.toothless.head2head.round.End
 import com.toothless.head2head.round.Round
+import com.toothless.head2head.scoreInput.ScoreInputKeyboard
 
 object GameManager {
     lateinit var round : Round
@@ -34,6 +35,7 @@ object GameManager {
 
     fun reset()
     {
+        ScoreInputKeyboard.removeEvents()
         round = Round()
     }
 
