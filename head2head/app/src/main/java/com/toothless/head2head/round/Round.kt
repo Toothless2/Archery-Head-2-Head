@@ -70,7 +70,7 @@ class Round {
         val matchScores = getMatchScores()
 
         //a score is above 6 and the match is not tied
-        if((matchScores.first >= 6 || matchScores.second >= 6) && matchScores.first != matchScores.second)
+        if((matchScores.first >= 6 || matchScores.second >= 6) && matchScores.first != matchScores.second && playersAtSameState())
             return true
 
         return false

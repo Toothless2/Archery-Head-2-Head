@@ -74,7 +74,8 @@ class FirstRoundScoreInput(val parent : MainActivity) : Fragment(), IScoreInput 
 
     override fun updateText()
     {
-        super.updateText()
+        if(!GameManager.playersAtSameStage())
+            return
 
         val scores = GameManager.getTotalScoresWithNames()
         player1Name.text = scores.first

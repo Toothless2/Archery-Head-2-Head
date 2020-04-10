@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    android:clickable="true"
+    tools:context=".fragments.SaveRoundMatchBreakdown">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/matchbreakdown"
+        android:textColor="@color/Gold"
+        android:textSize="36sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline5">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:text="@string/setpoints"
+            android:textColor="@color/Gold"
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:layout_column="0"
+            app:layout_gravity="right"
+            app:layout_row="1"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer1Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_toStartOf="@+id/divider2"
+            android:text="@string/player1"
+            android:textColor="@color/Red"
+            android:visibility="visible"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="0" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer2Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/textView11"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/player2"
+            android:textColor="@color/Blue"
+            android:visibility="visible"
+            app:layout_column="2"
+            app:layout_gravity="center"
+            app:layout_row="0"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer1SetPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Red"
+            android:visibility="visible"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="1" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer2SetPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Blue"
+            android:visibility="visible"
+            app:layout_column="2"
+            app:layout_gravity="center"
+            app:layout_row="1"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:text="@string/score"
+            android:textColor="@color/Gold"
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:layout_column="0"
+            app:layout_gravity="right"
+            app:layout_row="2"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:text="@string/tens"
+            android:textColor="@color/Gold"
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:layout_column="0"
+            app:layout_gravity="right"
+            app:layout_row="3"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:text="@string/nines"
+            android:textColor="@color/Gold"
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:layout_column="0"
+            app:layout_gravity="right"
+            app:layout_row="4"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:text="@string/hits"
+            android:textColor="@color/Gold"
+            android:textSize="18sp"
+            android:visibility="visible"
+            app:layout_column="0"
+            app:layout_gravity="right"
+            app:layout_row="5"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer2Hits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Blue"
+            android:visibility="visible"
+            app:layout_column="2"
+            app:layout_gravity="center"
+            app:layout_row="5"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer2Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Blue"
+            android:visibility="visible"
+            app:layout_column="2"
+            app:layout_gravity="center"
+            app:layout_row="2"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer1Tens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Red"
+            android:visibility="visible"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="3" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer1Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Red"
+            android:visibility="visible"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="2" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer1Nines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Red"
+            android:visibility="visible"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="4" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer1Hits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Red"
+            android:visibility="visible"
+            app:layout_column="1"
+            app:layout_gravity="center"
+            app:layout_row="5" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer2Tens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Blue"
+            android:visibility="visible"
+            app:layout_column="2"
+            app:layout_gravity="center"
+            app:layout_row="3"
+            tools:ignore="RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/savedScorePlayer2Nines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/none"
+            android:textColor="@color/Blue"
+            android:visibility="visible"
+            app:layout_column="2"
+            app:layout_gravity="center"
+            app:layout_row="4"
+            tools:ignore="RtlHardcoded" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="96dp"
+        android:background="@color/Gold"
+        app:layout_constraintBottom_toBottomOf="@+id/gridLayout"
+        app:layout_constraintStart_toStartOf="@+id/gridLayout"
+        app:layout_constraintTop_toTopOf="@+id/gridLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

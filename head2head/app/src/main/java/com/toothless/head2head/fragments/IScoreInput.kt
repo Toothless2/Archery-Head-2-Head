@@ -16,9 +16,7 @@ interface IScoreInput {
         updateText()
     }
 
-    fun updateText(){
-        if(!GameManager.playersAtSameStage())
-            return
-    }
+    fun updateText()
+
     fun updateScoreDisplay(scores: List<Int>, player : Int, end : Int)
 }

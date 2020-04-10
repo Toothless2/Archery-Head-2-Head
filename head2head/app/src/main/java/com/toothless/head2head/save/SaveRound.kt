@@ -25,7 +25,11 @@ object SaveRound {
                 "\"player1\":\"${round.player1}\"," +
                 "\"player2\": \"${round.player2}\"," +
                 "\"scores\": [${scores.first}, ${scores.second}]," +
-                "\"aiGame\": ${round.aiGame} }"
+                "\"aiGame\": ${round.aiGame}," +
+                "\"totalScore\" : [${round.scores.sumBy { it.p1End.sum() }}, ${round.scores.sumBy { it.p2End.sum() }}]," +
+                "\"tens\" : [${round.scores.sumBy { it.p1End.count { it == 10 } }}, ${round.scores.sumBy { it.p2End.count { it == 10 } }}]," +
+                "\"nines\" : [${round.scores.sumBy { it.p1End.count { it == 9 } }}, ${round.scores.sumBy { it.p2End.count { it == 9 } }}]," +
+                "\"hits\" : [${round.scores.sumBy { it.p1End.count { it != 0 } }}, ${round.scores.sumBy { it.p2End.count { it != 0 } }}]}"
 
         val jsonObj = JSONObject(jsonString)
 
@@ -37,11 +41,21 @@ object SaveRound {
         val rounds = json.getJSONArray("rounds")
         val returnList  = mutableListOf<SavedRoundJSON>()
 
-        for(i in 0 until rounds.length())
-        {
+        for(i in 0 until rounds.length()) {
             val temp = rounds[i] as JSONObject
-            val tempScores = temp.getJSONArray("scores")
-            returnList.add(SavedRoundJSON(temp.getInt("id"), temp.getString("player1"), temp.getString("player2"), tempScores[0] as Int, tempScores[1] as Int, temp.getBoolean("aiGame")))
+            val tempEndScores = temp.getJSONArray("scores")
+            val tempTotalScore = temp.getJSONArray("totalScore")
+            val tempTens = temp.getJSONArray("tens")
+            val tempNines = temp.getJSONArray("nines")
+            val tempHits = temp.getJSONArray("hits")
+            returnList.add(SavedRoundJSON(temp.getInt("id"),
+                    temp.getString("player1"), temp.getString("player2"),
+                    tempEndScores[0] as Int, tempEndScores[1] as Int,
+                    temp.getBoolean("aiGame"),
+                    tempTotalScore[0] as Int, tempTotalScore[1] as Int,
+                    tempTens[0] as Int, tempTens[1] as Int,
+                    tempNines[0] as Int, tempNines[1] as Int,
+                    tempHits[0] as Int, tempHits[1] as Int))
         }
 
         return returnList

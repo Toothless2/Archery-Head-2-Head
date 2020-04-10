@@ -64,12 +64,11 @@ class GameWinFragment : Fragment() {
         activity?.supportFragmentManager?.beginTransaction()?.remove(this)?.commit()
     }
 
-    private fun restartGame()
-    {
-        val name1  =  GameManager.round.player1
-        val name2 = GameManager.round.player2
-        val aiGame = GameManager.isAiGame
+    private fun restartGame() {
         val roundToSave = GameManager.round
+        val name1 = roundToSave.player1
+        val name2 = roundToSave.player2
+        val aiGame = GameManager.isAiGame
 
         Thread()
         {
@@ -80,6 +79,6 @@ class GameWinFragment : Fragment() {
         GameManager.reset()
         GameManager.isAiGame = aiGame
 
-        EventBus.startGameEvent(StartGameEvent(this ,name1, name2))
+        EventBus.startGameEvent(StartGameEvent(this, name1, name2))
     }
 }

@@ -66,7 +66,8 @@ class SecondRoundScoreInput(val parent : MainActivity) : Fragment(), IScoreInput
 
     override fun updateText()
     {
-        super.updateText()
+        if(!GameManager.playersAtSameStage())
+            return
         val scores = GameManager.getTotalScoresWithNames()
         player1Name.text = scores.first
         player2Name.text = scores.second

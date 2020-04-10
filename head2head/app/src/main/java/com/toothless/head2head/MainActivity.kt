@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().add(mainActivityLayout.id, nameInput).addToBackStack(null).commit()
     }
 
-    fun startGame(lastFragment : Fragment, name1: String, name2: String)
+    private fun startGame(lastFragment : Fragment, name1: String, name2: String)
     {
         ScoreInputKeyboard.assignEvents()
         GameManager.setupRound(name1, name2)
@@ -85,12 +85,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun shootoffScreenLoad() : Fragment
     {
-        lateinit var shootoff : Fragment
-        if(GameManager.isAiGame)
-            shootoff = ShootoffAIInput(this)
-        else
-            shootoff = ShootoffPlayersInput(this)
-
-        return shootoff
+        return  if(GameManager.isAiGame) ShootoffAIInput(this) else ShootoffPlayersInput(this)
     }
 }

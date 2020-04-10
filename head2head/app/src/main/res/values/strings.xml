@@ -3,6 +3,7 @@
     <string name="startNormalGame">Start PVP Game</string>
     <string name="startAIGame">Start AI Game</string>
     <string name="viewRounds">View Rounds</string>
+    <string name="pastRounds">Past Rounds</string>
 
     <!-- Players -->
     <string name="playerName1Hint">Player 1</string>
@@ -41,4 +42,12 @@
     <string name="playagain">Play Again?</string>
     <string name="contnosave">Don\'t Save</string>
     <string name="back">Save Score</string>
+
+    <!-- Past Rounds -->
+    <string name="matchbreakdown">Match Breakdown</string>
+    <string name="setpoints">Set Points</string>
+    <string name="score">Score</string>
+    <string name="tens">10\'s</string>
+    <string name="nines">9\'s</string>
+    <string name="hits">Hits</string>
 </resources>
