@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import com.toothless.head2head.MainActivity
 import com.toothless.head2head.R
 import com.toothless.head2head.GameManager
+import com.toothless.head2head.events.EventBus
+import com.toothless.head2head.events.data.ContinueGameEvent
+import com.toothless.head2head.events.data.GameOverEvent
 import kotlinx.android.synthetic.main.shootoff_fragment_players.*
 
 class ShootoffPlayersInput(val parent: MainActivity) :  Fragment(), IScoreInput {
@@ -49,7 +52,10 @@ class ShootoffPlayersInput(val parent: MainActivity) :  Fragment(), IScoreInput 
 
         GameManager.addPair(Pair(scores[0], scores[1]))
 
-        parent.continueGame(this)
+        if(GameManager.gameOver())
+            EventBus.gameOverEvent(GameOverEvent(this))
+        else
+            EventBus.continueGameEvent(ContinueGameEvent(this))
     }
 
     override fun updateScoreDisplay(scores: List<Int>, player: Int, end: Int) {}

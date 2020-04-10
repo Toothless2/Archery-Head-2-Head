@@ -8,7 +8,7 @@ interface IScoreInput {
 
         GameManager.addEnd(scores, player, end)
 
-        if (GameManager.isAiGame) {
+        if (GameManager.isAiGame && !GameManager.playersAtSameStage()) {
             GameManager.addEnd(GameManager.getAiEndScore(end), 2, end)
             updateScoreDisplay(GameManager.getEnd(end).p2End, 2, end)
         }

@@ -36,4 +36,9 @@
     <!-- Image Descriptions -->
     <string name="divider">Divider For Players</string>
     <string name="logo">Logo</string>
+
+    <!-- Winners Screen -->
+    <string name="playagain">Play Again?</string>
+    <string name="contnosave">Don\'t Save</string>
+    <string name="back">Save Score</string>
 </resources>

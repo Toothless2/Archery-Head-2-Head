@@ -11,6 +11,8 @@ import com.toothless.head2head.MainActivity
 import com.toothless.head2head.R
 import com.toothless.head2head.ai.AIManager
 import com.toothless.head2head.GameManager
+import com.toothless.head2head.events.EventBus
+import com.toothless.head2head.events.data.StartGameEvent
 import kotlinx.android.synthetic.main.name_input_fragment.*
 
 class NameInputFragment(val numberOfPlayers : Int, val mainActivity: MainActivity) : Fragment() {
@@ -18,11 +20,7 @@ class NameInputFragment(val numberOfPlayers : Int, val mainActivity: MainActivit
     private lateinit var name1: String
     private lateinit var name2: String
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.name_input_fragment, container, false)
     }
 
@@ -42,12 +40,12 @@ class NameInputFragment(val numberOfPlayers : Int, val mainActivity: MainActivit
         }
     }
 
-    fun submitName() {
+    private fun submitName() {
         if (!player1NameInput.text.isNullOrBlank())
             name1 = player1NameInput.text.toString()
         else {
             Toast.makeText(mainActivity, "Please input a name for player 1", Toast.LENGTH_LONG)
-                .show()
+                    .show()
             return
         }
 
@@ -56,25 +54,17 @@ class NameInputFragment(val numberOfPlayers : Int, val mainActivity: MainActivit
                 name2 = player2NameInput.text.toString()
             else {
                 Toast.makeText(mainActivity, "Please input a name for player 2", Toast.LENGTH_LONG)
-                    .show()
+                        .show()
                 return
             }
-        }
-        else
-        {
-//            name2 = aiNameSelector.selectedItem.toString()
-//            GameManager.selectedAi = AIManager.getAiId(name2)
-
+        } else
             name2 = GameManager.setSelectedAi(aiNameSelector.selectedItem.toString())
-        }
 
-        if(!this::name2.isInitialized){
+        if (!this::name2.isInitialized) {
             Toast.makeText(mainActivity, "Please select and AI", Toast.LENGTH_LONG).show()
             return
         }
 
-        GameManager.setupRound(name1, name2)
-
-        mainActivity.loadFirstRound(this)
+        EventBus.startGameEvent(StartGameEvent(this, name1, name2))
     }
 }

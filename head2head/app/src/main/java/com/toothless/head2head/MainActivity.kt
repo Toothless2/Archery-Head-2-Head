@@ -2,9 +2,12 @@ package com.toothless.head2head
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.toothless.head2head.ai.AIManager
+import com.toothless.head2head.events.EventBus
+import com.toothless.head2head.events.data.ContinueGameEvent
+import com.toothless.head2head.events.data.GameOverEvent
+import com.toothless.head2head.events.data.StartGameEvent
 import com.toothless.head2head.fragments.*
 import com.toothless.head2head.save.SaveRound
 import com.toothless.head2head.scoreInput.ScoreInputKeyboard
@@ -12,9 +15,17 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private val startGameEventHandler : (StartGameEvent) -> Unit = { (fragment, name1, name2) -> startGame(fragment, name1, name2)}
+    private val continueGameEventHandler : (ContinueGameEvent) -> Unit = {continueGame(it.fragment)}
+    private val gameOverEventHandler : (GameOverEvent) -> Unit = { if(GameManager.gameOver()) gameOver(it.fragment) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        EventBus.continueGameEvent += continueGameEventHandler
+        EventBus.startGameEvent += startGameEventHandler
+        EventBus.gameOverEvent += gameOverEventHandler
 
         GameManager.reset()
         AIManager.setupAI(this)
@@ -41,38 +52,22 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().add(mainActivityLayout.id, nameInput).addToBackStack(null).commit()
     }
 
-    fun loadFirstRound(nameInputFragment: NameInputFragment)
+    fun startGame(lastFragment : Fragment, name1: String, name2: String)
     {
-        supportFragmentManager.beginTransaction().remove(nameInputFragment).commit()
+        ScoreInputKeyboard.assignEvents()
+        GameManager.setupRound(name1, name2)
+        supportFragmentManager.beginTransaction().remove(lastFragment).commit()
         val firstRoundFragment = FirstRoundScoreInput(this)
         supportFragmentManager.beginTransaction().add(mainActivityLayout.id, firstRoundFragment).addToBackStack(null).commit()
     }
 
-    fun continueGame(fragment: Fragment) {
-        if (GameManager.gameOver()) {
+    private fun gameOver(fragment: Fragment)
+    {
+        supportFragmentManager.beginTransaction().remove(fragment).commit()
+        supportFragmentManager.beginTransaction().add(mainActivityLayout.id, GameWinFragment()).addToBackStack(null).commit()
+    }
 
-            AlertDialog.Builder(this).setTitle("Congratulations!")
-                    .setMessage("Well Done ${GameManager.getLeader()}")
-                    .setPositiveButton(android.R.string.ok) { _, _ -> // notify of who won and close the fragment when ok is pressed
-                        Thread() {
-                            SaveRound.addRound(GameManager.round)
-                            SaveRound.writeJsonData(this)
-                            GameManager.reset()
-                        }.start()
-                        supportFragmentManager.beginTransaction().remove(fragment).commit()
-                    }
-                    .setOnDismissListener {//does the same thing as pressing ok but needs to be assigned properly
-                        Thread() {
-                            SaveRound.addRound(GameManager.round)
-                            SaveRound.writeJsonData(this)
-                            GameManager.reset()
-                        }.start()
-                        supportFragmentManager.beginTransaction().remove(fragment).commit()
-                    }
-                    .show()
-
-            return
-        }
+    private fun continueGame(fragment: Fragment) {
 
         var nextScreen: Fragment? = null
 

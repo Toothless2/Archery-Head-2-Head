@@ -11,6 +11,8 @@ import com.toothless.head2head.MainActivity
 import com.toothless.head2head.R
 import com.toothless.head2head.GameManager
 import com.toothless.head2head.events.EventBus
+import com.toothless.head2head.events.data.ContinueGameEvent
+import com.toothless.head2head.events.data.GameOverEvent
 import com.toothless.head2head.events.data.KeyboardEvent
 import com.toothless.head2head.events.data.ScoreInputEvent
 import com.toothless.head2head.scoreInput.ScoreInputKeyboard
@@ -41,34 +43,16 @@ class ShootoffAIInput(val parent : MainActivity) : Fragment(), IScoreInput {
     private fun assignFunctionsToButtons()
     {
         p1end1.setOnClickListener {
-//            displayKeyboard()
             EventBus.keyboardEvent(KeyboardEvent(this, 1, GameManager.round.scores.size+1, 1))
         }
     }
 
-//    private var keyboard : AlertDialog? = null
-//    private fun displayKeyboard() {
-//        val builder = AlertDialog.Builder(context)
-//        val inf = parent.layoutInflater.inflate(R.layout.layout_score_input_keyboard, view as ViewGroup, false)
-//        inf.out2.visibility = View.GONE
-//        inf.out3.visibility = View.GONE
-//        val kb = ScoreInputKeyboard(inf, 1, GameManager.round.scores.size + 1, 1)
-//        kb.setupKeyboard()
-//        builder.setView(inf)
-//
-//        keyboard = builder.create()
-//        keyboard?.show()
-//        keyboard?.window?.setBackgroundDrawable(null)
-//    }
-
     override fun scoreInput(scores: List<Int>, player : Int, end : Int) {
-//        keyboard?.dismiss()
         super.scoreInput(scores, player, end)
 
-        if(GameManager.gameOver())
-            parent.continueGame(this)
-        else
-        {
+        if (GameManager.gameOver())
+            EventBus.gameOverEvent(GameOverEvent(this))
+        else {
             p1end1score1.text = ""
             p2end1score1.text = ""
         }

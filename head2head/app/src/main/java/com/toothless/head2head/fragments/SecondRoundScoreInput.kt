@@ -9,6 +9,8 @@ import com.toothless.head2head.MainActivity
 import com.toothless.head2head.R
 import com.toothless.head2head.GameManager
 import com.toothless.head2head.events.EventBus
+import com.toothless.head2head.events.data.ContinueGameEvent
+import com.toothless.head2head.events.data.GameOverEvent
 import com.toothless.head2head.events.data.KeyboardEvent
 import com.toothless.head2head.events.data.ScoreInputEvent
 import kotlinx.android.synthetic.main.second_round_score_input_fragment.*
@@ -55,7 +57,11 @@ class SecondRoundScoreInput(val parent : MainActivity) : Fragment(), IScoreInput
 
     override fun scoreInput(scores: List<Int>, player : Int, end : Int) {
         super.scoreInput(scores, player, end)
-        parent.continueGame(this)
+
+        if(GameManager.gameOver())
+            EventBus.gameOverEvent(GameOverEvent(this))
+        else
+            EventBus.continueGameEvent(ContinueGameEvent(this))
     }
 
     override fun updateText()
