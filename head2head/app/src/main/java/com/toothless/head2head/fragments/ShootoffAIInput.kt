@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.toothless.head2head.MainActivity
 import com.toothless.head2head.R
 import com.toothless.head2head.GameManager
+import com.toothless.head2head.enums.EScoreInputType
 import com.toothless.head2head.events.EventBus
 import com.toothless.head2head.events.data.GameOverEvent
 import com.toothless.head2head.events.data.KeyboardEvent
@@ -34,7 +35,7 @@ class ShootoffAIInput(val parent : MainActivity) : Fragment(), IScoreInput {
     private fun assignFunctionsToButtons()
     {
         p1end1.setOnClickListener {
-            EventBus.keyboardEvent(KeyboardEvent(this, 1, GameManager.round.scores.size+1, 1))
+            EventBus.keyboardEvent(KeyboardEvent(this, 1, GameManager.round.scores.size+1, EScoreInputType.SHOOTOFFEND))
         }
     }
 

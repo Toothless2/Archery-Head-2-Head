@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import com.toothless.head2head.R
 import com.toothless.head2head.GameManager
 import com.toothless.head2head.enums.EScoreDisplay
+import com.toothless.head2head.enums.EScoreInputType
 import com.toothless.head2head.events.EventBus
 import com.toothless.head2head.events.data.KeyboardEvent
 import com.toothless.head2head.events.data.ScoreInputEvent
 import kotlinx.android.synthetic.main.layout_score_input_keyboard.view.*
 
-class ScoreInputKeyboard(val view: View, val player : Int, val end : Int, private val maxScores : Int = 3) {
+class ScoreInputKeyboard(val view: View, val player : Int, val end : Int, private val maxScores : EScoreInputType = EScoreInputType.NORMALEND) {
 
     companion object
     {
@@ -34,14 +35,14 @@ class ScoreInputKeyboard(val view: View, val player : Int, val end : Int, privat
 
         private var keyboard : AlertDialog? = null
 
-        private fun openKeyboard(parent : Fragment, player : Int, end : Int, maxScores : Int) {
+        private fun openKeyboard(parent : Fragment, player : Int, end : Int, maxScores : EScoreInputType) {
             if (keyboard != null && keyboard?.isShowing!!)
                 return
 
             val builder = AlertDialog.Builder(parent.context)
             val inf = parent.layoutInflater.inflate(R.layout.layout_score_input_keyboard, parent.view as ViewGroup, false)
 
-            if (maxScores == 1) { // hides 2 of the core output boxes on the keyboard (used in shoot-off)
+            if (maxScores == EScoreInputType.SHOOTOFFEND) { // hides 2 of the core output boxes on the keyboard (used in shoot-off)
                 inf.out2.visibility = View.GONE
                 inf.out3.visibility = View.GONE
             }
@@ -118,8 +119,8 @@ class ScoreInputKeyboard(val view: View, val player : Int, val end : Int, privat
     }
 
     private fun saveScore() {
-        if(scores.size != maxScores)
-            while (scores.size < maxScores)
+        if(scores.size != maxScores.number)
+            while (scores.size < maxScores.number)
                 scores.add(0)
 
         EventBus.scoreInputEvent(ScoreInputEvent(scores.sorted().reversed(), player, end))
@@ -142,7 +143,7 @@ class ScoreInputKeyboard(val view: View, val player : Int, val end : Int, privat
 
     private fun addButtonScore(score : Int)
     {
-        if(scores.size >= maxScores)
+        if(scores.size >= maxScores.number)
             return
 
         scores.add(score)
