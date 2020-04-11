@@ -2,6 +2,7 @@ package com.toothless.head2head
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import androidx.fragment.app.Fragment
 import com.toothless.head2head.ai.AIManager
 import com.toothless.head2head.events.EventBus
@@ -63,8 +64,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun gameOver(fragment: Fragment)
     {
-        supportFragmentManager.beginTransaction().remove(fragment).commit()
-        supportFragmentManager.beginTransaction().add(mainActivityLayout.id, GameWinFragment()).addToBackStack(null).commit()
+        Thread {
+            SystemClock.sleep(500)
+            supportFragmentManager.beginTransaction().remove(fragment).commit()
+            supportFragmentManager.beginTransaction().add(mainActivityLayout.id, GameWinFragment()).addToBackStack(null).commit()
+        }.start()
     }
 
     private fun continueGame(fragment: Fragment) {
@@ -79,8 +83,11 @@ class MainActivity : AppCompatActivity() {
         if (nextScreen == null)
             return
 
-        supportFragmentManager.beginTransaction().remove(fragment).commit()
-        supportFragmentManager.beginTransaction().replace(mainActivityLayout.id, nextScreen).addToBackStack(null).commit()
+        Thread {
+            SystemClock.sleep(500)
+            supportFragmentManager.beginTransaction().remove(fragment).commit()
+            supportFragmentManager.beginTransaction().replace(mainActivityLayout.id, nextScreen).addToBackStack(null).commit()
+        }.start()
     }
 
     private fun shootoffScreenLoad() : Fragment
