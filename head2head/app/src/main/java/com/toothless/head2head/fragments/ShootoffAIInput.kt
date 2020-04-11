@@ -62,9 +62,9 @@ class ShootoffAIInput(val parent : MainActivity) : Fragment(), IScoreInput {
     override fun updateScoreDisplay(scores: List<Int>, player : Int, end: Int) {
         when (player) {
             1 ->
-                p1end1score1.text = scores[0].toString()
+                p1end1score1.text = scoreDisplay(scores[0])
             2 ->
-                p2end1score1.text = scores[0].toString()
+                p2end1score1.text = scoreDisplay(scores[0])
         }
     }
 

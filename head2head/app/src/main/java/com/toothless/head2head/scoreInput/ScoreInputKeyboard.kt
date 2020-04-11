@@ -3,9 +3,11 @@ package com.toothless.head2head.scoreInput
 import android.app.AlertDialog
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.toSpannable
 import androidx.fragment.app.Fragment
 import com.toothless.head2head.R
 import com.toothless.head2head.GameManager
+import com.toothless.head2head.enums.EScoreDisplay
 import com.toothless.head2head.events.EventBus
 import com.toothless.head2head.events.data.KeyboardEvent
 import com.toothless.head2head.events.data.ScoreInputEvent
@@ -150,12 +152,12 @@ class ScoreInputKeyboard(val view: View, val player : Int, val end : Int, privat
     private fun updateDisplay()
     {
         if(scores.size >= 1)
-            view.out1.text = scores[0].toString()
+            view.out1.text = EScoreDisplay.values()[scores[0]].display
 
         if(scores.size >= 2)
-            view.out2.text = scores[1].toString()
+            view.out2.text = EScoreDisplay.values()[scores[1]].display
 
         if(scores.size >= 3)
-            view.out3.text = scores[2].toString()
+            view.out3.text = EScoreDisplay.values()[scores[2]].display
     }
 }

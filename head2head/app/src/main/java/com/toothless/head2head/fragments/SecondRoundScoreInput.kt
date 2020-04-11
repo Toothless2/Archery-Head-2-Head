@@ -80,30 +80,30 @@ class SecondRoundScoreInput(val parent : MainActivity) : Fragment(), IScoreInput
             1 ->
                 when(end) {
                     4 -> {
-                        p1end1score1.text = scores[0].toString()
-                        p1end1score2.text = scores[1].toString()
-                        p1end1score3.text = scores[2].toString()
+                        p1end1score1.text = scoreDisplay(scores[0])
+                        p1end1score2.text = scoreDisplay(scores[1])
+                        p1end1score3.text = scoreDisplay(scores[2])
                         p1end1score.text = scores.sum().toString()
                     }
                     5 -> {
-                        p1end2score1.text = scores[0].toString()
-                        p1end2score2.text = scores[1].toString()
-                        p1end2score3.text = scores[2].toString()
+                        p1end2score1.text = scoreDisplay(scores[0])
+                        p1end2score2.text = scoreDisplay(scores[1])
+                        p1end2score3.text = scoreDisplay(scores[2])
                         p1end2score.text = scores.sum().toString()
                     }
                 }
             2 ->
                 when(end) {
                     4 -> {
-                        p2end1score1.text = scores[0].toString()
-                        p2end1score2.text = scores[1].toString()
-                        p2end1score3.text = scores[2].toString()
+                        p2end1score1.text = scoreDisplay(scores[0])
+                        p2end1score2.text = scoreDisplay(scores[1])
+                        p2end1score3.text = scoreDisplay(scores[2])
                         p2end1score.text = scores.sum().toString()
                     }
                     5 -> {
-                        p2end2score1.text = scores[0].toString()
-                        p2end2score2.text = scores[1].toString()
-                        p2end2score3.text = scores[2].toString()
+                        p2end2score1.text = scoreDisplay(scores[0])
+                        p2end2score2.text = scoreDisplay(scores[1])
+                        p2end2score3.text = scoreDisplay(scores[2])
                         p2end2score.text = scores.sum().toString()
                     }
                 }

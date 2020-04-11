@@ -1,6 +1,7 @@
 package com.toothless.head2head.fragments
 
 import com.toothless.head2head.GameManager
+import com.toothless.head2head.enums.EScoreDisplay
 
 interface IScoreInput {
     fun scoreInput(scores: List<Int>, player : Int, end : Int) {
@@ -17,6 +18,10 @@ interface IScoreInput {
     }
 
     fun updateText()
-
     fun updateScoreDisplay(scores: List<Int>, player : Int, end : Int)
+
+    fun scoreDisplay(score : Int) : String
+    {
+        return EScoreDisplay.values()[score].display
+    }
 }
