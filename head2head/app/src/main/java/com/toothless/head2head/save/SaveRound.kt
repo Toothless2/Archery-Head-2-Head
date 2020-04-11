@@ -10,8 +10,7 @@ import java.io.IOException
 import java.nio.charset.Charset
 
 object SaveRound {
-    lateinit var json : JSONObject
-    private set
+    private lateinit var json : JSONObject
 
     fun setupSave(ctx : Context)
     {
@@ -27,9 +26,9 @@ object SaveRound {
                 "\"scores\": [${scores.first}, ${scores.second}]," +
                 "\"aiGame\": ${round.aiGame}," +
                 "\"totalScore\" : [${round.scores.sumBy { it.p1End.sum() }}, ${round.scores.sumBy { it.p2End.sum() }}]," +
-                "\"tens\" : [${round.scores.sumBy { it.p1End.count { it == 10 } }}, ${round.scores.sumBy { it.p2End.count { it == 10 } }}]," +
-                "\"nines\" : [${round.scores.sumBy { it.p1End.count { it == 9 } }}, ${round.scores.sumBy { it.p2End.count { it == 9 } }}]," +
-                "\"hits\" : [${round.scores.sumBy { it.p1End.count { it != 0 } }}, ${round.scores.sumBy { it.p2End.count { it != 0 } }}]}"
+                "\"tens\" : [${round.scores.sumBy { it.p1End.count { i -> i == 10 } }}, ${round.scores.sumBy { it.p2End.count { i -> i == 10 } }}]," +
+                "\"nines\" : [${round.scores.sumBy { it.p1End.count { i -> i == 9 } }}, ${round.scores.sumBy { it.p2End.count { i -> i == 9 } }}]," +
+                "\"hits\" : [${round.scores.sumBy { it.p1End.count { i -> i != 0 } }}, ${round.scores.sumBy { it.p2End.count { i -> i != 0 } }}]}"
 
         val jsonObj = JSONObject(jsonString)
 
@@ -78,19 +77,19 @@ object SaveRound {
             json.getJSONArray("rounds").remove(roundPos)
     }
 
-    fun clearAllData(ctx:Context)
-    {
-        try {
-            val check = File(ctx.applicationInfo.dataDir + "/rounds/savedrounds.json")
-            if (!check.exists())
-                return
-
-            check.delete()
-        }catch (e : IOException)
-        {
-            e.printStackTrace()
-        }
-    }
+//    fun clearAllData(ctx:Context)
+//    {
+//        try {
+//            val check = File(ctx.applicationInfo.dataDir + "/rounds/savedrounds.json")
+//            if (!check.exists())
+//                return
+//
+//            check.delete()
+//        }catch (e : IOException)
+//        {
+//            e.printStackTrace()
+//        }
+//    }
 
     fun writeJsonData(ctx : Context)
     {

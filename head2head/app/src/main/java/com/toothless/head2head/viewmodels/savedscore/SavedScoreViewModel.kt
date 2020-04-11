@@ -3,7 +3,6 @@ package com.toothless.head2head.viewmodels.savedscore
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,7 +49,7 @@ class SavedScoreViewModel(private val ctx : Activity, private val savedScores : 
         }
     }
 
-    fun deleteSavedRound(roundId : Int)
+    private fun deleteSavedRound(roundId : Int)
     {
         SaveRound.removeRound(roundId)
         SaveRound.writeJsonData(ctx)
@@ -60,8 +59,8 @@ class SavedScoreViewModel(private val ctx : Activity, private val savedScores : 
 class SavedScoreViewHolder(view: View) : RecyclerView.ViewHolder(view)
 {
     var roundId = -1
-    val playerNames = view.savedGamePlayerNames
-    val scores = view.savedGamePlayerScores
-    val type = view.savedGameGameType
-    val layout = view.savedGameLinLayout
+    val playerNames = view.savedGamePlayerNames!!
+    val scores = view.savedGamePlayerScores!!
+    val type = view.savedGameGameType!!
+    val layout = view.savedGameLinLayout!!
 }

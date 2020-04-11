@@ -36,14 +36,13 @@ class Round {
         {
             val scores = pair.getEndScores()
 
-            if(scores.first > scores.second)
-                p1 += 2
-            else if(scores.second > scores.first)
-                p2 += 2
-            else
-            {
-                p1++
-                p2++
+            when {
+                scores.first > scores.second -> p1 += 2
+                scores.second > scores.first -> p2 += 2
+                else -> {
+                    p1++
+                    p2++
+                }
             }
         }
 

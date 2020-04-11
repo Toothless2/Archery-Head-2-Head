@@ -4,12 +4,10 @@ import android.content.Context
 import org.json.JSONObject
 import java.io.IOException
 import java.nio.charset.Charset
-import kotlin.math.roundToInt
-import kotlin.random.Random
 
 object AIManager {
 
-    lateinit var aiData : JSONObject
+    private lateinit var aiData : JSONObject
 
     fun setupAI(ctx : Context)
     {
@@ -33,7 +31,7 @@ object AIManager {
         val ais = aiData.getJSONArray("ais")
 
         for (i in 0 until ais.length())
-            if((ais[i] as JSONObject).getString("name").equals(aiName))
+            if((ais[i] as JSONObject).getString("name") == aiName)
                 return i
 
         return -1

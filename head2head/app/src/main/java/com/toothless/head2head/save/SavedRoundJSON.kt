@@ -7,4 +7,4 @@ data class SavedRoundJSON(val id:Int,
                           val p1totalScore : Int, val p2totalScore : Int,
                           val p110 : Int, val p210 : Int,
                           val p19 : Int, val p29 : Int,
-                          val p1Hits : Int, val p2Hits : Int) {}
+                          val p1Hits : Int, val p2Hits : Int)

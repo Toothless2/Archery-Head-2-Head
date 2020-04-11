@@ -15,7 +15,7 @@ import com.toothless.head2head.events.EventBus
 import com.toothless.head2head.events.data.StartGameEvent
 import kotlinx.android.synthetic.main.name_input_fragment.*
 
-class NameInputFragment(val numberOfPlayers : Int, val mainActivity: MainActivity) : Fragment() {
+class NameInputFragment(private val numberOfPlayers : Int, private val mainActivity: MainActivity) : Fragment() {
 
     private lateinit var name1: String
     private lateinit var name2: String

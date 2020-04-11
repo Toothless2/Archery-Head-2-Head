@@ -13,8 +13,8 @@ data class AI(val id: Int, val name : String, val score : Double, val variance: 
         val arrowAverage = endAverage / 3
         val variance = variance
         val arrowVariance = variance / 3.0
-        val throwMultiplyer = (if (currentScores.first >= currentScores.second) 0.01 else (currentScores.second - (currentScores.first + 1))/10.0)
-        val throwChance = throwChance * throwMultiplyer
+        val throwMultiplier = (if (currentScores.first >= currentScores.second) 0.01 else (currentScores.second - (currentScores.first + 1))/10.0)
+        val throwChance = throwChance * throwMultiplier
 
         for (i in 0 until nScoresToGenerate) {
             val arrowScore = Random.nextDouble((arrowAverage - arrowVariance) * (1-throwChance), arrowAverage + 1)

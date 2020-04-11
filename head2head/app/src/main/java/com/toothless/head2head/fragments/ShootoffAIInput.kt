@@ -1,7 +1,5 @@
 package com.toothless.head2head.fragments
 
-import android.app.AlertDialog
-import android.opengl.Visibility
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,17 +9,10 @@ import com.toothless.head2head.MainActivity
 import com.toothless.head2head.R
 import com.toothless.head2head.GameManager
 import com.toothless.head2head.events.EventBus
-import com.toothless.head2head.events.data.ContinueGameEvent
 import com.toothless.head2head.events.data.GameOverEvent
 import com.toothless.head2head.events.data.KeyboardEvent
 import com.toothless.head2head.events.data.ScoreInputEvent
-import com.toothless.head2head.scoreInput.ScoreInputKeyboard
-import kotlinx.android.synthetic.main.layout_score_input_keyboard.view.*
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end1
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p1end1score1
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.p2end1score1
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.player1Name
-import kotlinx.android.synthetic.main.second_round_score_input_fragment.player2Name
+import kotlinx.android.synthetic.main.second_round_score_input_fragment.*
 
 
 class ShootoffAIInput(val parent : MainActivity) : Fragment(), IScoreInput {

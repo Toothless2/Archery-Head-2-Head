@@ -11,7 +11,7 @@ import com.toothless.head2head.events.data.KeyboardEvent
 import com.toothless.head2head.events.data.ScoreInputEvent
 import kotlinx.android.synthetic.main.layout_score_input_keyboard.view.*
 
-class ScoreInputKeyboard(val view: View, val player : Int, val end : Int, val maxScores : Int = 3) {
+class ScoreInputKeyboard(val view: View, val player : Int, val end : Int, private val maxScores : Int = 3) {
 
     companion object
     {

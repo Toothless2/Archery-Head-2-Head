@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     private fun startGame(players : Int)
     {
         ScoreInputKeyboard.assignEvents()
-        GameManager.isAiGame = players != 2 // if there isnt 2 players then its an ai game
+        GameManager.isAiGame = players != 2 // if there isn't 2 players then its an ai game
         val nameInput = NameInputFragment(players, this)
         supportFragmentManager.beginTransaction().add(mainActivityLayout.id, nameInput).addToBackStack(null).commit()
     }
