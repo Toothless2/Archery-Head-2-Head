@@ -32,7 +32,6 @@ class MapEvent<T>(private val backing : MutableMap<String, (T) -> Unit>) : Abstr
         return true
     }
 
-    @JvmSynthetic
     operator fun set(name : String, handler : ((T) -> Unit)?)
     {
         if(handler == null)
