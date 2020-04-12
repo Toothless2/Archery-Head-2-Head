@@ -10,7 +10,8 @@
     <color name="playerBlue">#70c1b3</color>
     <color name="Gold">#FFEB3B</color>
     <color name="Red">#ED0000</color>
-    <color name="Blue">#293bf2</color>
+<!--    <color name="Blue">#293bf2</color>-->
+    <color name="Blue">#2983f2</color>
     <color name="Black">#000000</color>
     <color name="White">#FFFFFFFF</color>
     <color name="Background">#50514f</color>
