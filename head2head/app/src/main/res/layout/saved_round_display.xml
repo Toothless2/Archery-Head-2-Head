@@ -21,7 +21,7 @@
         android:longClickable="false"
         android:text="@string/none"
         android:textAllCaps="false"
-        android:textColor="@color/Gold"
+        android:textColor="@color/yellowButtonColor"
         android:visibility="visible" />
 
     <TextView
@@ -34,7 +34,7 @@
         android:longClickable="false"
         android:text="@string/none"
         android:textAllCaps="false"
-        android:textColor="@color/Gold"
+        android:textColor="@color/yellowButtonColor"
         android:visibility="visible" />
 
     <ImageView
@@ -43,7 +43,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_weight="1"
+        android:layout_weight=".1"
         android:clickable="false"
         android:contentDescription="@string/none"
         android:contextClickable="false"

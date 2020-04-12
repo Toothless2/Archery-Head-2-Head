@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="yellowButtonColor">#ffe066</color>
+    <color name="yellowHintColour">#bda95b</color>
+    <color name="playerRed">#f35f5c</color>
+    <color name="playerBlue">#70c1b3</color>
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
@@ -8,5 +12,5 @@
     <color name="Blue">#293bf2</color>
     <color name="Black">#000000</color>
     <color name="White">#FFFFFFFF</color>
-    <color name="Background">#504B4B</color>
+    <color name="Background">#50514f</color>
 </resources>

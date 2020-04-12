@@ -39,11 +39,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/Gold"
+                android:backgroundTint="@color/yellowButtonColor"
                 android:minWidth="200dp"
                 android:text="@string/startNormalGame"
                 android:textAllCaps="false"
-                android:textColor="@color/Gold" />
+                android:textColor="@color/yellowButtonColor" />
 
             <Button
                 android:id="@+id/startAIGame"
@@ -51,11 +51,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/Red"
+                android:backgroundTint="@color/yellowButtonColor"
                 android:minWidth="200dp"
                 android:text="@string/startAIGame"
                 android:textAllCaps="false"
-                android:textColor="@color/Red" />
+                android:textColor="@color/yellowButtonColor" />
 
             <Button
                 android:id="@+id/viewGames"
@@ -63,12 +63,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
                 android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/Blue"
+                android:backgroundTint="@color/yellowButtonColor"
                 android:enabled="true"
                 android:minWidth="200dp"
                 android:text="@string/viewRounds"
                 android:textAllCaps="false"
-                android:textColor="@color/Blue" />
+                android:textColor="@color/yellowButtonColor" />
 
         </LinearLayout>
 

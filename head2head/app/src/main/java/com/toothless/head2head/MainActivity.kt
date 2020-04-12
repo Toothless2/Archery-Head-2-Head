@@ -10,6 +10,12 @@ import com.toothless.head2head.events.data.ContinueGameEvent
 import com.toothless.head2head.events.data.GameOverEvent
 import com.toothless.head2head.events.data.StartGameEvent
 import com.toothless.head2head.fragments.*
+import com.toothless.head2head.fragments.name.NameInputFragment
+import com.toothless.head2head.fragments.saved.ViewSavedRounds
+import com.toothless.head2head.fragments.scoreInput.FirstRoundScoreInput
+import com.toothless.head2head.fragments.scoreInput.SecondRoundScoreInput
+import com.toothless.head2head.fragments.scoreInput.ShootoffAIInput
+import com.toothless.head2head.fragments.scoreInput.ShootoffPlayersInput
 import com.toothless.head2head.save.SaveRound
 import com.toothless.head2head.scoreInput.ScoreInputKeyboard
 import kotlinx.android.synthetic.main.activity_main.*

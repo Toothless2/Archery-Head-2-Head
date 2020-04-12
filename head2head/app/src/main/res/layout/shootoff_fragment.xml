@@ -7,7 +7,7 @@
     android:background="@color/Background"
     android:outlineAmbientShadowColor="#00FFFFFF"
     android:clickable="true"
-    tools:context=".fragments.ShootoffAIInput">
+    tools:context=".fragments.scoreInput.ShootoffAIInput">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/player1"
@@ -53,13 +53,13 @@
                         android:layout_marginLeft="4dp"
                         android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Red"
+                        android:backgroundTint="@color/playerRed"
                         android:clickable="false"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
                         android:outlineProvider="none"
                         android:text="@string/none"
-                        android:textColor="@color/Red" />
+                        android:textColor="@color/yellowButtonColor" />
 
                 </LinearLayout>
 
@@ -79,7 +79,7 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/divider"
         android:outlineAmbientShadowColor="#00FFFFFF"
@@ -134,14 +134,14 @@
                         android:layout_marginLeft="4dp"
                         android:layout_marginRight="4dp"
                         android:background="@drawable/scorebutton"
-                        android:backgroundTint="@color/Blue"
+                        android:backgroundTint="@color/playerBlue"
                         android:backgroundTintMode="multiply"
                         android:clickable="false"
                         android:maxWidth="45dp"
                         android:minWidth="45dp"
                         android:outlineProvider="none"
                         android:text="@string/none"
-                        android:textColor="@color/Blue" />
+                        android:textColor="@color/yellowButtonColor" />
 
                 </LinearLayout>
 
@@ -164,7 +164,7 @@
         android:layout_marginEnd="32dp"
         android:outlineAmbientShadowColor="#00FFFFFF"
         android:text="@string/player1"
-        android:textColor="#FFEB3B"
+        android:textColor="@color/yellowButtonColor"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -177,7 +177,7 @@
         android:layout_marginStart="32dp"
         android:outlineAmbientShadowColor="#00FFFFFF"
         android:text="@string/player2"
-        android:textColor="#FFEB3B"
+        android:textColor="@color/yellowButtonColor"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/guideline"

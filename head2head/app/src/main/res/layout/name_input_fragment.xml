@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
-    tools:context="fragments.NameInputFragment"
+    tools:context=".fragments.name.NameInputFragment"
     android:clickable="true">
 
     <androidx.cardview.widget.CardView
@@ -33,13 +33,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 android:autofillHints="@string/playerName1Hint"
-                android:backgroundTint="@color/Red"
+                android:backgroundTint="@color/playerRed"
                 android:ems="10"
                 android:hint="@string/playerName1Hint"
                 android:inputType="textPersonName"
                 android:outlineProvider="none"
-                android:textColor="@color/Gold"
-                android:textColorHint="#CDDC39" />
+                android:textColor="@color/yellowButtonColor"
+                android:textColorHint="@color/yellowHintColour" />
 
             <EditText
                 android:id="@+id/player2NameInput"
@@ -47,20 +47,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 android:autofillHints="@string/playerName2Hint"
-                android:backgroundTint="@color/Blue"
+                android:backgroundTint="@color/playerBlue"
                 android:ems="10"
                 android:hint="@string/playerName2Hint"
                 android:inputType="textPersonName"
                 android:outlineProvider="none"
-                android:textColor="@color/Gold"
-                android:textColorHint="#CDDC39" />
+                android:textColor="@color/yellowButtonColor"
+                android:textColorHint="@color/yellowHintColour" />
 
             <Spinner
                 android:id="@+id/aiNameSelector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
-                android:backgroundTint="@color/Blue"
+                android:backgroundTint="@color/playerBlue"
                 android:outlineProvider="none"
                 android:popupBackground="@color/Background"
                 android:visibility="gone" />
@@ -71,10 +71,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
                 android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/Gold"
+                android:backgroundTint="@color/yellowButtonColor"
                 android:outlineProvider="none"
                 android:text="@android:string/ok"
-                android:textColor="@color/Gold" />
+                android:textColor="@color/yellowButtonColor" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

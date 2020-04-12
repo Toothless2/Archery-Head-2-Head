@@ -1,4 +1,4 @@
-package com.toothless.head2head.fragments
+package com.toothless.head2head.fragments.name
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

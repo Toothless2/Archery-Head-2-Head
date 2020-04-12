@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.toothless.head2head.R
-import com.toothless.head2head.fragments.SaveRoundMatchBreakdown
+import com.toothless.head2head.fragments.saved.SaveRoundMatchBreakdown
 import com.toothless.head2head.save.SaveRound
 import com.toothless.head2head.save.SavedRoundJSON
 import kotlinx.android.synthetic.main.saved_round_display.view.*

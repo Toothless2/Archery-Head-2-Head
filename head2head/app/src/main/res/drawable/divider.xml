@@ -1,35 +1,35 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="343dp"
-    android:height="65dp"
-    android:viewportWidth="343"
-    android:viewportHeight="65">
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="1277"
+    android:viewportHeight="727">
   <group>
     <clip-path
-        android:pathData="M0,0 L343,0 343,65 0,65Z"
+        android:pathData="M0,0 L1277,0 1277,727 0,727Z"
         android:fillType="evenOdd"/>
     <path
-        android:pathData="M1,62 L147.243,62"
-        android:strokeWidth="4"
+        android:pathData="M0.5,720.5 L448.1,720.5"
+        android:strokeWidth="13.3333"
         android:fillColor="#00000000"
         android:fillType="evenOdd"
-        android:strokeColor="#FF0000"/>
+        android:strokeColor="@color/playerRed"/>
     <path
-        android:pathData="M147,61.607 L171.224,31.999"
-        android:strokeWidth="4"
+        android:pathData="M445.5,724.5 L635.59,364.5"
+        android:strokeWidth="6.66667"
         android:fillColor="#00000000"
         android:fillType="evenOdd"
-        android:strokeColor="#FF0000"/>
+        android:strokeColor="@color/playerRed"/>
     <path
-        android:pathData="M342.243,3 L196,3"
-        android:strokeWidth="4"
+        android:pathData="M1276.23,7.5 L818.5,8.93"
+        android:strokeWidth="13.3333"
         android:fillColor="#00000000"
         android:fillType="evenOdd"
-        android:strokeColor="#0070C0"/>
+        android:strokeColor="@color/playerBlue"/>
     <path
-        android:pathData="M195.224,3 L171,32.607"
-        android:strokeWidth="4"
+        android:pathData="M821.39,9.5 L632.5,369.47"
+        android:strokeWidth="6.66667"
         android:fillColor="#00000000"
         android:fillType="evenOdd"
-        android:strokeColor="#0070C0"/>
+        android:strokeColor="@color/playerBlue"/>
   </group>
 </vector>

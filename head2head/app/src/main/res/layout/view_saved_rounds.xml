@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/Background"
     android:clickable="true"
-    tools:context="fragments.ViewSavedRounds">
+    tools:context=".fragments.saved.ViewSavedRounds">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/savedRoundsRecycler"
@@ -32,7 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pastRounds"
-        android:textColor="@color/Gold"
+        android:textColor="@color/yellowButtonColor"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/savedRoundsRecycler"
         app:layout_constraintEnd_toEndOf="parent"

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:clickable="true"
@@ -31,12 +32,13 @@
                 android:layout_weight="1"
                 android:height="100dp"
                 android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/Red"
+                android:backgroundTint="@color/playerRed"
                 android:outlineProvider="none"
                 android:text="@string/shootoff_player1"
                 android:textAllCaps="false"
-                android:textColor="@color/Red"
-                android:textSize="24sp" />
+                android:textColor="@color/playerRed"
+                android:textSize="24sp"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/player2ShootoffWin"
@@ -46,12 +48,13 @@
                 android:layout_weight="1"
                 android:height="100dp"
                 android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/Blue"
+                android:backgroundTint="@color/playerBlue"
                 android:outlineProvider="none"
                 android:text="@string/shootoff_player2"
                 android:textAllCaps="false"
-                android:textColor="@color/Blue"
-                android:textSize="24sp" />
+                android:textColor="@color/playerBlue"
+                android:textSize="24sp"
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
 
         <Button
@@ -62,10 +65,10 @@
             android:layout_marginVertical="10dp"
             android:height="100dp"
             android:background="@drawable/scorebutton"
-            android:backgroundTint="@color/Gold"
+            android:backgroundTint="@color/yellowButtonColor"
             android:text="@string/shootoff_tie"
             android:textAllCaps="false"
-            android:textColor="@color/Gold"
+            android:textColor="@color/yellowButtonColor"
             android:textSize="36sp" />
 
     </LinearLayout>

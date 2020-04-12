@@ -1,4 +1,4 @@
-package com.toothless.head2head.fragments
+package com.toothless.head2head.fragments.scoreInput
 
 import com.toothless.head2head.GameManager
 import com.toothless.head2head.enums.EScoreDisplay
