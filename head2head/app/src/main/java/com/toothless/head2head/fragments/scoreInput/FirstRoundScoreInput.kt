@@ -135,4 +135,6 @@ class FirstRoundScoreInput(val parent : MainActivity) : Fragment(), IScoreInput 
         EventBus.scoreInputEvent -= scoreInputEventHandler
         super.onDestroyView()
     }
+
+    
 }

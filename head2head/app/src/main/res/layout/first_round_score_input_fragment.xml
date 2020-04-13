@@ -15,7 +15,7 @@
         android:layout_marginBottom="16dp"
         android:outlineProvider="none"
         android:visibility="visible"
-        app:cardBackgroundColor="@color/Background"
+        app:cardBackgroundColor="@android:color/transparent"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,12 +33,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:outlineProvider="none"
-                app:cardBackgroundColor="#00FFFFFF">
+                app:cardBackgroundColor="@android:color/transparent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/Background"
+                    android:background="@android:color/transparent"
                     android:clickable="false"
                     android:orientation="horizontal"
                     android:outlineAmbientShadowColor="#00FFFFFF"

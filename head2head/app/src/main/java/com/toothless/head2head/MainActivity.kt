@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
     private val continueGameEventHandler : (ContinueGameEvent) -> Unit = {continueGame(it.fragment)}
     private val gameOverEventHandler : (GameOverEvent) -> Unit = { if(GameManager.gameOver()) gameOver(it.fragment) }
 
+    private lateinit var homeFragment : HomeScreenFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,34 +40,17 @@ class MainActivity : AppCompatActivity() {
         AIManager.setupAI(this)
         SaveRound.setupSave(this)
 
-        startNormalGame.setOnClickListener {
-            startGame(2)
-        }
+        homeFragment = HomeScreenFragment(this)
 
-        startAIGame.setOnClickListener {
-            startGame(1)
-        }
-
-        viewGames.setOnClickListener {
-            supportFragmentManager.beginTransaction().add(mainActivityLayout.id, ViewSavedRounds(this)).addToBackStack(null).commit()
-        }
-    }
-
-    private fun startGame(players : Int)
-    {
-        ScoreInputKeyboard.assignEvents()
-        GameManager.isAiGame = players != 2 // if there isn't 2 players then its an ai game
-        val nameInput = NameInputFragment(players, this)
-        supportFragmentManager.beginTransaction().add(mainActivityLayout.id, nameInput).addToBackStack(null).commit()
+        supportFragmentManager.beginTransaction().add(mainActivityLayout.id,homeFragment).commit()
     }
 
     private fun startGame(lastFragment : Fragment, name1: String, name2: String)
     {
         ScoreInputKeyboard.assignEvents()
         GameManager.setupRound(name1, name2)
-        supportFragmentManager.beginTransaction().remove(lastFragment).commit()
         val firstRoundFragment = FirstRoundScoreInput(this)
-        supportFragmentManager.beginTransaction().add(mainActivityLayout.id, firstRoundFragment).addToBackStack(null).commit()
+        supportFragmentManager.beginTransaction().replace(mainActivityLayout.id, firstRoundFragment).commit()
     }
 
     private fun gameOver(fragment: Fragment)
@@ -73,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         Thread {
             SystemClock.sleep(500)
             supportFragmentManager.beginTransaction().remove(fragment).commit()
-            supportFragmentManager.beginTransaction().add(mainActivityLayout.id, GameWinFragment()).addToBackStack(null).commit()
+            supportFragmentManager.beginTransaction().replace(mainActivityLayout.id, GameWinFragment()).commit()
         }.start()
     }
 
@@ -91,13 +76,19 @@ class MainActivity : AppCompatActivity() {
 
         Thread {
             SystemClock.sleep(500)
-            supportFragmentManager.beginTransaction().remove(fragment).commit()
-            supportFragmentManager.beginTransaction().replace(mainActivityLayout.id, nextScreen).addToBackStack(null).commit()
+            supportFragmentManager.beginTransaction().replace(mainActivityLayout.id, nextScreen).commit()
         }.start()
     }
 
     private fun shootoffScreenLoad() : Fragment
     {
         return  if(GameManager.isAiGame) ShootoffAIInput(this) else ShootoffPlayersInput(this)
+    }
+
+    override fun onBackPressed() {
+        if(supportFragmentManager.fragments.size < 2) // stops fragments being stacked ontop of each other when the back button is pressed (because android is shit)
+            for (i in supportFragmentManager.fragments)
+                supportFragmentManager.beginTransaction().remove(i).commit()
+        super.onBackPressed()
     }
 }

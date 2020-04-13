@@ -15,4 +15,5 @@
     <color name="Black">#000000</color>
     <color name="White">#FFFFFFFF</color>
     <color name="Background">#50514f</color>
+    <color name="Background_Light">#CDCDCD</color>
 </resources>

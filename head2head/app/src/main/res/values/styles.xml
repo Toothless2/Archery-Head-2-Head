@@ -1,5 +1,5 @@
 <resources>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="DarkTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -8,6 +8,10 @@
         <item name="android:textColor">@color/yellowButtonColor</item>
         <item name="android:buttonStyle">@style/defaultButton</item>
     </style>
+
+<!--    <style name="LightTheme" parent="DarkTheme">-->
+<!--        <item name="android:windowBackground">@color/Background_Light</item>-->
+<!--    </style>-->
 
     <style name="defaultButton" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/scorebutton</item>

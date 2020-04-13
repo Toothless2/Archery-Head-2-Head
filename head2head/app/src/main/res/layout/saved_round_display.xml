@@ -4,7 +4,6 @@
     android:id="@+id/savedGameLinLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/Background"
     android:clickable="true"
     android:gravity="center"
     android:paddingVertical="10dp">

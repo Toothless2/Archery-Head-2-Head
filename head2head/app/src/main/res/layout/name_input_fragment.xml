@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Background"
-    tools:context=".fragments.name.NameInputFragment"
-    android:clickable="true">
+    android:clickable="true"
+    tools:context=".fragments.name.NameInputFragment">
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
