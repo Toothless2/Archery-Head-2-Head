@@ -1,11 +1,17 @@
 <resources>
-
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/Background</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/yellowButtonColor</item>
+        <item name="android:buttonStyle">@style/defaultButton</item>
+    </style>
+
+    <style name="defaultButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/scorebutton</item>
+        <item name="android:backgroundTint">@color/yellowButtonColor</item>
     </style>
 
 </resources>

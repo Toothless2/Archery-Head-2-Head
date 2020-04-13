@@ -31,7 +31,6 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_weight="1"
                 android:height="100dp"
-                android:background="@drawable/scorebutton"
                 android:backgroundTint="@color/playerRed"
                 android:outlineProvider="none"
                 android:text="@string/shootoff_player1"
@@ -47,7 +46,6 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_weight="1"
                 android:height="100dp"
-                android:background="@drawable/scorebutton"
                 android:backgroundTint="@color/playerBlue"
                 android:outlineProvider="none"
                 android:text="@string/shootoff_player2"
@@ -64,11 +62,8 @@
             android:layout_marginHorizontal="8dp"
             android:layout_marginVertical="10dp"
             android:height="100dp"
-            android:background="@drawable/scorebutton"
-            android:backgroundTint="@color/yellowButtonColor"
             android:text="@string/shootoff_tie"
             android:textAllCaps="false"
-            android:textColor="@color/yellowButtonColor"
             android:textSize="36sp" />
 
     </LinearLayout>

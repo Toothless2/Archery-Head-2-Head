@@ -9,8 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/Background">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -38,37 +37,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
-                android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/yellowButtonColor"
                 android:minWidth="200dp"
-                android:text="@string/startNormalGame"
-                android:textAllCaps="false"
-                android:textColor="@color/yellowButtonColor" />
+                android:text="@string/startNormalGame" />
 
             <Button
                 android:id="@+id/startAIGame"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
-                android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/yellowButtonColor"
                 android:minWidth="200dp"
-                android:text="@string/startAIGame"
-                android:textAllCaps="false"
-                android:textColor="@color/yellowButtonColor" />
+                android:text="@string/startAIGame" />
 
             <Button
                 android:id="@+id/viewGames"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="10dp"
-                android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/yellowButtonColor"
                 android:enabled="true"
                 android:minWidth="200dp"
-                android:text="@string/viewRounds"
-                android:textAllCaps="false"
-                android:textColor="@color/yellowButtonColor" />
+                android:text="@string/viewRounds" />
 
         </LinearLayout>
 

@@ -32,7 +32,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pastRounds"
-        android:textColor="@color/yellowButtonColor"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/savedRoundsRecycler"
         app:layout_constraintEnd_toEndOf="parent"

@@ -4,5 +4,4 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:padding="5dp"
-    android:textColor="@color/yellowButtonColor"
     android:textSize="20sp" />

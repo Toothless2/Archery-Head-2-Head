@@ -70,11 +70,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="4dp"
-                android:background="@drawable/scorebutton"
-                android:backgroundTint="@color/yellowButtonColor"
                 android:outlineProvider="none"
-                android:text="@android:string/ok"
-                android:textColor="@color/yellowButtonColor" />
+                android:text="@android:string/ok" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
